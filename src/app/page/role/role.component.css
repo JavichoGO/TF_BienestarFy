@@ -1,0 +1,19 @@
+table {
+    width: 100%;
+    text-align: center;
+    background-color:aliceblue;
+    border-collapse: collapse;
+  }
+  h1{
+    text-align: center;
+    font-size: 50px;
+  
+  }
+  th{
+    text-align: center;
+    background-color: green;
+    border-bottom: solid 5px ;
+    color: white;
+  }
+  
+  

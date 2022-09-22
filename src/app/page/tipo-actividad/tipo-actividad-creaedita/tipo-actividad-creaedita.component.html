@@ -1,0 +1,33 @@
+
+<p>tipo-actividad-crea-edita works!</p>
+<div class="container">
+  <br>
+    <h1>Tipo Actividad</h1>
+    <br>
+    <mat-form-field class="example-full-width">
+      <mat-label>Id</mat-label>
+      <input matInput placeholder="Id" [(ngModel)]="tipoactividad.id">
+    </mat-form-field>
+  
+    <br>
+  
+    <mat-form-field class="example-full-width">
+      <mat-label>Nombre</mat-label>
+      <input matInput required placeholder="name" [(ngModel)]="tipoactividad.nombreTipoActividad">
+  
+    </mat-form-field>
+  
+    <br>
+    <mat-form-field class="example-full-width">
+      <mat-label>Descripcion</mat-label>
+      <input type="email" matInput required placeholder="email" [(ngModel)]="tipoactividad.descripcionTipoActividad">
+    </mat-form-field>
+
+    
+  
+    <br>
+    <button mat-raised-button color="primary" (click)="aceptar()">Aceptar</button>
+    <button mat-raised-button color="warn" routerLink="/tipoactividad">Cancelar</button>
+    <p>{{mensaje}}</p>
+  
+  </div>

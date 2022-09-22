@@ -1,0 +1,29 @@
+<div class ="container">
+  <br>
+  <h1 >Añadir Tipo Horario</h1>
+  <br>
+  <mat-form-field class="example-full-width">
+    <mat-label>Id</mat-label>
+    <input matInput placeholder="id" [(ngModel)]="tipohorario.id">
+  </mat-form-field>
+
+  <br>
+
+  <mat-form-field class="example-full-width">
+    <mat-label>Nombre</mat-label>
+    <input matInput required placeholder="nombre" [(ngModel)]="tipohorario.nombreTipoHorario">
+
+  </mat-form-field>
+
+  <br>
+  <mat-form-field class="example-full-width">
+    <mat-label>Descripcion</mat-label>
+    <input matInput required placeholder="descripcion" [(ngModel)]="tipohorario.descripcionTipoHorario">
+  </mat-form-field>
+
+  <br>
+  <button mat-raised-button color="primary" (click)="aceptar()">Aceptar</button>
+  <button mat-raised-button color="warn" routerLink="/tipohorario">Cancelar</button>
+  <p>{{mensaje}}</p>
+
+</div>

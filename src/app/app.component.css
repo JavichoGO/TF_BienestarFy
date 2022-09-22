@@ -1,0 +1,48 @@
+.title {
+  text-align: center;
+  font-size: 80px;
+  justify-content: center;
+  margin: 15px 0;
+}
+
+menu {
+  padding: 0;
+  text-align: center;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: darkmagenta;
+  cursor: pointer;
+  padding: 0 15px;
+  font-size: 19px;
+  text-align: center;
+}
+
+.indice {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  padding-left: 0;
+}
+
+body{
+  background-image: url("body.jpg");
+  background-size: cover;
+}
+th{
+  background-image: url("logo.png");
+  padding: 0.5cm;
+  position: relative;
+}
+h2{
+  color: rgb(16, 0, 117);
+  font-style:unset;
+}
+
