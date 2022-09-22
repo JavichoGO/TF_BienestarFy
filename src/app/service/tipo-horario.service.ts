@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { TipoHorario } from '../model/tipo-horario';
-import { Subject } from 'rxjs';
+import { Subject,EMPTY } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
 export class TipoHorarioService {
 url:string="http://localhost:5100/tipohorario"
 private listaCambio = new Subject<TipoHorario[]>()
+private confirmaEliminacion = new Subject<Boolean>()
   constructor( private http:HttpClient) { }
   listar(){
     return this.http.get<TipoHorario[]>(this.url);
@@ -26,6 +27,22 @@ private listaCambio = new Subject<TipoHorario[]>()
   }
   listarId(id: number) {
     return this.http.get<TipoHorario>(`${this.url}/${id}`);
+  }
+  eliminar(id: number) {
+    return this.http.delete(this.url + "/" + id);
+  }
+  getConfirmaEliminacion() {
+    return this.confirmaEliminacion.asObservable();
+  }
+  setConfirmaEliminacion(estado: Boolean) {
+    this.confirmaEliminacion.next(estado);
+  }
+  buscar(texto: string) {
+    if (texto.length != 0) {
+      return this.http.post<TipoHorario[]>(`${this.url}/buscar`, texto.toLowerCase(), {
+      });
+    }
+    return EMPTY;
   }
 
   
