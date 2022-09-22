@@ -41,6 +41,8 @@ import { TipoActividadBuscarComponent } from './page/tipo-actividad/tipo-activid
 import { TipoActividadDialogoComponent } from './page/tipo-actividad/tipo-actividad-listar/tipo-actividad-dialogo/tipo-actividad-dialogo.component';
 import { TipoSuscripcionDialogoComponent } from './page/tipo-suscripcion/tipo-suscripcion-listar/tipo-suscripcion-dialogo/tipo-suscripcion-dialogo.component';
 import { TipoSuscripcionBuscarComponent } from './page/tipo-suscripcion/tipo-suscripcion-buscar/tipo-suscripcion-buscar.component';
+import { TipoHorarioBuscarComponent } from './page/tipo-horario/tipo-horario-buscar/tipo-horario-buscar.component';
+import { TipoHorarioDialogoComponent } from './page/tipo-horario/tipo-horario-listar/tipo-horario-dialogo/tipo-horario-dialogo.component';
 
 
 
@@ -77,7 +79,9 @@ import { TipoSuscripcionBuscarComponent } from './page/tipo-suscripcion/tipo-sus
     TipoActividadBuscarComponent,
     TipoActividadDialogoComponent,
     TipoSuscripcionDialogoComponent,
-    TipoSuscripcionBuscarComponent
+    TipoSuscripcionBuscarComponent,
+    TipoHorarioBuscarComponent,
+    TipoHorarioDialogoComponent
   ],
   imports: [
     BrowserModule,
