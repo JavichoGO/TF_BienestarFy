@@ -2,7 +2,7 @@ import { CategoriaService } from './../../../service/categoria.service';
 import { Categoria } from './../../../model/categoria';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-
+//comentario
 @Component({
   selector: 'app-categoria-creaedita',
   templateUrl: './categoria-creaedita.component.html',
