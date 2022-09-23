@@ -12,7 +12,7 @@ import { TipoSuscripcionDialogoComponent } from './tipo-suscripcion-dialogo/tipo
 })
 export class TipoSuscripcionListarComponent implements OnInit {
   dataSource: MatTableDataSource<TipoSuscripcion> = new MatTableDataSource();
-  displayedColumns: string[]=['id','nombre','descripcion','descuento','acciones','accion2'];
+  displayedColumns: string[]=['id','nombre','descripcion','descuento','acciones'];
   private idMayor: number=0;
   constructor(private tss: TipoSuscripcionService, private dialog: MatDialog) { }
 
