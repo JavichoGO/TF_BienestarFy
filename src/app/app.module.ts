@@ -43,6 +43,9 @@ import { TipoSuscripcionDialogoComponent } from './page/tipo-suscripcion/tipo-su
 import { TipoSuscripcionBuscarComponent } from './page/tipo-suscripcion/tipo-suscripcion-buscar/tipo-suscripcion-buscar.component';
 import { TipoHorarioBuscarComponent } from './page/tipo-horario/tipo-horario-buscar/tipo-horario-buscar.component';
 import { TipoHorarioDialogoComponent } from './page/tipo-horario/tipo-horario-listar/tipo-horario-dialogo/tipo-horario-dialogo.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import { RoleBuscarComponent } from './page/role/role-buscar/role-buscar.component';
+import { RoleDialogoComponent } from './page/role/role-listar/role-dialogo/role-dialogo.component';
 
 
 
@@ -81,7 +84,10 @@ import { TipoHorarioDialogoComponent } from './page/tipo-horario/tipo-horario-li
     TipoSuscripcionDialogoComponent,
     TipoSuscripcionBuscarComponent,
     TipoHorarioBuscarComponent,
-    TipoHorarioDialogoComponent
+    TipoHorarioDialogoComponent,
+    RoleBuscarComponent,
+    RoleDialogoComponent
+  
   ],
   imports: [
     BrowserModule,
@@ -93,7 +99,8 @@ import { TipoHorarioDialogoComponent } from './page/tipo-horario/tipo-horario-li
     FormsModule,
     MatButtonModule,
     MatIconModule,
-    MatDialogModule
+    MatDialogModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

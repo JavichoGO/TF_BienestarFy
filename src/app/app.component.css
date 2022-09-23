@@ -5,11 +5,6 @@
   margin: 15px 0;
 }
 
-menu {
-  padding: 0;
-  text-align: center;
-}
-
 ul {
   margin: 0;
   padding: 0;
@@ -21,15 +16,8 @@ a {
   color: darkmagenta;
   cursor: pointer;
   padding: 0 15px;
-  font-size: 19px;
+  font-size: 20px;
   text-align: center;
-}
-
-.indice {
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  padding-left: 0;
 }
 
 body{
@@ -38,11 +26,17 @@ body{
 }
 th{
   background-image: url("logo.png");
-  padding: 0.5cm;
-  position: relative;
+  border-image-width: 1cm;
+  padding: 2cm;
 }
 h2{
   color: rgb(16, 0, 117);
   font-style:unset;
 }
-
+.spacer{
+  flex: 1 1  auto ;
+}
+.mat-toolbar{
+  height: 120px;
+  background-color: rgba(0, 0, 0, 0.2)
+}
