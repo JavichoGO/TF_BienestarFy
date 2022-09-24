@@ -21,6 +21,7 @@ export class TipoSuscripcionBuscarComponent implements OnInit {
           array.push(data[index]);
         }
       });
+      
       this.tiposuscripcionService.setLista(array);
     })
   }

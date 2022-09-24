@@ -100,7 +100,8 @@ import { RoleDialogoComponent } from './page/role/role-listar/role-dialogo/role-
     MatButtonModule,
     MatIconModule,
     MatDialogModule,
-    MatToolbarModule
+    MatToolbarModule,
+  
   ],
   providers: [],
   bootstrap: [AppComponent]
