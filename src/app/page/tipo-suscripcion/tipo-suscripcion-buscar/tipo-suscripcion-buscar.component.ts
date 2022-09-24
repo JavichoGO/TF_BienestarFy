@@ -2,6 +2,7 @@ import { TipoSuscripcion } from './../../../model/tipo-suscripcion';
 import { Component, OnInit } from '@angular/core';
 import { TipoSuscripcionService } from 'src/app/service/tipo-suscripcion.service';
 
+
 @Component({
   selector: 'app-tipo-suscripcion-buscar',
   templateUrl: './tipo-suscripcion-buscar.component.html',
@@ -17,7 +18,7 @@ export class TipoSuscripcionBuscarComponent implements OnInit {
     let array: TipoSuscripcion[] = [];
     this.tiposuscripcionService.listar().subscribe(data => {
       data.forEach((element, index) => {
-        if (element.nombreTipoSuscripcion.includes(e.target.value)) {
+        if (element.nombreTipoSuscripcion.toUpperCase().includes(e.target.value.toUpperCase())||element.descripcionTipoSucripcion.toUpperCase().includes(e.target.value.toUpperCase())) {
           array.push(data[index]);
         }
       });

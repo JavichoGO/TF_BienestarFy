@@ -17,7 +17,7 @@ export class RoleBuscarComponent implements OnInit {
     let array: Role[] = [];
     this.roleService.listar().subscribe(data => {
       data.forEach((element, index) => {
-        if (element.nombreRole.includes(e.target.value)) {
+        if (element.nombreRole.toUpperCase().includes(e.target.value.toUpperCase())||element.descripcionRole.toUpperCase().includes(e.target.value.toUpperCase())) {
           array.push(data[index]);
         }
       });
