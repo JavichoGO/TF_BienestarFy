@@ -17,7 +17,7 @@ export class CategoriaBuscarComponent implements OnInit {
     let array: Categoria[] = [];
     this.categoriaService.listar().subscribe(data => {
       data.forEach((element, index) => {
-        if (element.nombreCategoria.includes(e.target.value)) {
+        if (element.nombreCategoria.toUpperCase().includes(e.target.value.toUpperCase())||element.descripcionCategoria.toUpperCase().includes(e.target.value.toUpperCase())) {
           array.push(data[index]);
         }
       });
