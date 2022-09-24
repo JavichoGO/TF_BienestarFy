@@ -2,33 +2,24 @@
 <html lang="es">
 
 <body>
-
-  <header>
-    <th><img src="logo.png" alt="logo" width="100" height="100">
-      <h2> BienestarFy</h2>
-    </th>
-  </header>
-  <menu class="menu">
-
-    <table></table>
-    <ul>
-      <nav>
-        <li class="indice">
-
-          <a routerLink="/actividad">Actividad</a>
-          <a routerLink="/tipoactividad">Tipo de Actividad</a>
-          <a routerLink="/categoria">Categoria</a>
-          <a routerLink="/horario">Horario</a>
-          <a routerLink="/tipohorario">Tipo de Horario</a>
-          <a routerLink="/reserva">Reserva</a>
-          <a routerLink="/role">Rol</a>
-          <a routerLink="/suscripcion">Suscripcion</a>
-          <a routerLink="/tiposuscripcion">Tipo de Suscripcion</a>
-          <a routerLink="/usuario">Usuario</a>
-        </li>
-      </nav>
-    </ul>
-  </menu>
+  <mat-toolbar>
+    <header>
+      <span><img src="logo.png" alt="logo" width="100" height="100"> 
+        <a style="color: rgb(0, 0, 88)">BienestarFy </a>
+      </span>
+    </header>
+    <div class="spacer"> </div>
+          <a mat-button routerLink="/actividad">Actividad</a>
+          <a mat-button routerLink="/tipoactividad">Tipo de Actividad</a>
+          <a mat-button routerLink="/categoria">Categoria</a>
+          <a mat-button routerLink="/horario">Horario</a>
+          <a mat-button routerLink="/tipohorario">Tipo de Horario</a>
+          <a mat-button routerLink="/reserva">Reserva</a>
+          <a mat-button routerLink="/role">Rol</a>
+          <a mat-button routerLink="/suscripcion">Suscripcion</a>
+          <a mat-button routerLink="/tiposuscripcion">Tipo de Suscripcion</a>
+          <a mat-button routerLink="/usuario">Usuario</a>
+  </mat-toolbar>
 
   <router-outlet></router-outlet>
   <app-categoria></app-categoria>

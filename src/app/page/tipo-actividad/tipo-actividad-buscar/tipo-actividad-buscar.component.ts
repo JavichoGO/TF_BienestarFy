@@ -9,9 +9,9 @@ import { TipoActividadService } from 'src/app/service/tipo-actividad.service';
 })
 
 export class TipoActividadBuscarComponent implements OnInit {
-textoBuscar: string = "";
+  textoBuscar: string = "";
 
-  constructor(private tipoactividadService : TipoActividadService) { }
+  constructor(private tipoactividadService: TipoActividadService) { }
 
   ngOnInit(): void {
   }
@@ -20,7 +20,7 @@ textoBuscar: string = "";
     let array: TipoActividad[] = [];
     this.tipoactividadService.listar().subscribe(data => {
       data.forEach((element, index) => {
-        if (element.nombreTipoActividad.includes(e.target.value)) {
+        if (element.nombreTipoActividad.toUpperCase().includes(e.target.value.toUpperCase()) || element.descripcionTipoActividad.toUpperCase().includes(e.target.value.toUpperCase())) {
           array.push(data[index]);
         }
       });

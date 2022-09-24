@@ -1,0 +1,12 @@
+p {
+    font-size: 17px;
+    text-align: center;
+}
+
+button {
+    object-position: center;
+    font-size: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+  }

@@ -20,7 +20,7 @@ textoBuscar: string = "";
     let array: TipoHorario[] = [];
     this.tipohorarioService.listar().subscribe(data => {
       data.forEach((element, index) => {
-        if (element.nombreTipoHorario.includes(e.target.value)) {
+        if (element.nombreTipoHorario.toUpperCase().includes(e.target.value.toUpperCase())||element.descripcionTipoHorario.toUpperCase().includes(e.target.value.toUpperCase())) {
           array.push(data[index]);
         }
       });
