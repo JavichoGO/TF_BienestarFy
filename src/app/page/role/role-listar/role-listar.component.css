@@ -1,0 +1,39 @@
+table {
+  width: 100%;
+  text-align: center;
+  background-color: rgb(255, 234, 250);
+  border-collapse: collapse;
+  font-size: 142px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 50px;
+  color: rgb(0, 0, 88);
+}
+
+th {
+  text-align: center;
+  background-color: rgb(184, 71, 143);
+  border-bottom: solid 5px;
+  color: white;
+  font-size: 18px;
+}
+td{
+  font-size: 15px;
+}
+button {
+  object-position: center;
+  font-size: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
+  text-align: center;
+}
+.mat-success2 {
+  color: #fff;
+  background-color: rgb(184, 71, 143);
+}
+.mat-success {
+  color: #fff;
+  background-color:#6610f2 ;
+}
