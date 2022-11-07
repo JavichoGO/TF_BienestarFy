@@ -10,7 +10,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ActividadListarComponent implements OnInit {
   dataSource: MatTableDataSource<Actividad> = new MatTableDataSource();
-  displayedColumns:string[]=['id','nombre','descripcion','usuario','tipo']
+  displayedColumns:string[]=['id','nombre','duracion','descripcion','usuario','tipo']
+  
   constructor(private as: ActividadService) { }
   ngOnInit(): void {
     this.as.listar().subscribe(d => {

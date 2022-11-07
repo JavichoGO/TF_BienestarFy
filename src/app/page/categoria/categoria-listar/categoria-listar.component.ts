@@ -28,14 +28,14 @@ export class CategoriaListarComponent implements OnInit {
       });
 
     }
-    confirmar(id: number) {
-      this.idMayor = id;
+    confirmar(idCategoria: number) {
+      this.idMayor = idCategoria;
       this.dialog.open(CategoriaDialogoComponent);
     }
   
   
-    eliminar(id: number) {
-      this.cs.eliminar(id).subscribe(() => {
+    eliminar(idCategoria: number) {
+      this.cs.eliminar(idCategoria).subscribe(() => {
         this.cs.listar().subscribe(data => {
           this.cs.setLista(data);/* se ejecuta la línea 27*/
         });

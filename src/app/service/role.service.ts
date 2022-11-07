@@ -28,13 +28,13 @@ export class RoleService {
   }
 
   modificar(role: Role) {
-    return this.http.put(this.url + "/" + role.id, role);
+    return this.http.put(this.url + "/" + role.idRole, role);
   }
-  listarId(id: number) {
-    return this.http.get<Role>(`${this.url}/${id}`);
+  listarId(idRole: number) {
+    return this.http.get<Role>(`${this.url}/${idRole}`);
   }
-  eliminar(id: number) {
-    return this.http.delete(this.url + "/" + id);
+  eliminar(idRole: number) {
+    return this.http.delete(this.url + "/" + idRole);
   }
   getConfirmaEliminacion() {
     return this.confirmaEliminacion.asObservable();

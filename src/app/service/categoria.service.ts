@@ -28,13 +28,13 @@ export class CategoriaService {
   }
 
   modificar(categoria: Categoria) {
-    return this.http.put(this.url + "/" + categoria.id, categoria);
+    return this.http.put(this.url + "/" + categoria.idCategoria, categoria);
   }
-  listarId(id: number) {
-    return this.http.get<Categoria>(`${this.url}/${id}`);
+  listarId(idCategoria: number) {
+    return this.http.get<Categoria>(`${this.url}/${idCategoria}`);
   }
-  eliminar(id: number) {
-    return this.http.delete(this.url + "/" + id);
+  eliminar(idCategoria: number) {
+    return this.http.delete(this.url + "/" + idCategoria);
   }
   getConfirmaEliminacion() {
     return this.confirmaEliminacion.asObservable();
