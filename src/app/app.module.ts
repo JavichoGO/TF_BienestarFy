@@ -46,6 +46,8 @@ import { TipoHorarioDialogoComponent } from './page/tipo-horario/tipo-horario-li
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { RoleBuscarComponent } from './page/role/role-buscar/role-buscar.component';
 import { RoleDialogoComponent } from './page/role/role-listar/role-dialogo/role-dialogo.component';
+import { DetalleReservaComponent } from './page/detalle-reserva/detalle-reserva.component';
+import { DetalleReservaListarComponent } from './page/detalle-reserva/detalle-reserva-listar/detalle-reserva-listar.component';
 
 
 
@@ -86,7 +88,9 @@ import { RoleDialogoComponent } from './page/role/role-listar/role-dialogo/role-
     TipoHorarioBuscarComponent,
     TipoHorarioDialogoComponent,
     RoleBuscarComponent,
-    RoleDialogoComponent
+    RoleDialogoComponent,
+    DetalleReservaComponent,
+    DetalleReservaListarComponent
   
   ],
   imports: [

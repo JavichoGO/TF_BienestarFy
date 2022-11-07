@@ -1,3 +1,4 @@
+import { DetalleReservaComponent } from './page/detalle-reserva/detalle-reserva.component';
 import { CategoriaCreaEditaComponent } from './page/categoria/categoria-creaedita/categoria-creaedita.component';
 import { TipoSuscripcionCreaeditaComponent } from './page/tipo-suscripcion/tipo-suscripcion-creaedita/tipo-suscripcion-creaedita.component';
 import { RoleCreaeditaComponent } from './page/role/role-creaedita/role-creaedita.component';
@@ -73,6 +74,10 @@ const routes: Routes = [
     path:'categoria',component:CategoriaComponent,children:[
       { path: 'nuevo', component: CategoriaCreaEditaComponent },
       { path: 'edicion/:id', component: CategoriaCreaEditaComponent }
+    ]
+  },
+  {
+    path:'detalle-reserva',component:DetalleReservaComponent,children:[
     ]
   },
 ];

@@ -27,14 +27,14 @@ export class TipoHorarioListarComponent implements OnInit {
       data == true ? this.eliminar(this.idMayor) : false;
     });
   }
-  confirmar(id: number) {
-    this.idMayor = id;
+  confirmar(idTipoHorario: number) {
+    this.idMayor = idTipoHorario;
     this.dialog.open(TipoHorarioDialogoComponent);
   }
 
 
-  eliminar(id: number) {
-    this.ths.eliminar(id).subscribe(() => {
+  eliminar(idTipoHorario: number) {
+    this.ths.eliminar(idTipoHorario).subscribe(() => {
       this.ths.listar().subscribe(data => {
         this.ths.setLista(data);/* se ejecuta la línea 27*/
       });

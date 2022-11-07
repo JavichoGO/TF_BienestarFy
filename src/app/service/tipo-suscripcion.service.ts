@@ -23,13 +23,13 @@ export class TipoSuscripcionService {
     return this.listaCambio.asObservable();
   }
   modificar(tiposuscripcion: TipoSuscripcion) {
-    return this.http.put(this.url + "/" + tiposuscripcion.id, tiposuscripcion);
+    return this.http.put(this.url + "/" + tiposuscripcion.idTipoSuscripcion, tiposuscripcion);
   }
-  listarId(id: number) {
-    return this.http.get<TipoSuscripcion>(`${this.url}/${id}`);
+  listarId(idTipoSuscripcion: number) {
+    return this.http.get<TipoSuscripcion>(`${this.url}/${idTipoSuscripcion}`);
   }
-  eliminar(id: number) {
-    return this.http.delete(this.url + "/" + id);
+  eliminar(idTipoSuscripcion: number) {
+    return this.http.delete(this.url + "/" + idTipoSuscripcion);
   }
   getConfirmaEliminacion() {
     return this.confirmaEliminacion.asObservable();

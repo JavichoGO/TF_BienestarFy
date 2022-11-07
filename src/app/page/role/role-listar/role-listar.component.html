@@ -10,7 +10,7 @@
   <!-- Position Column -->
   <ng-container matColumnDef="id">
     <th mat-header-cell *matHeaderCellDef> Id </th>
-    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.idRole}} </td>
   </ng-container>
 
  <!-- Name Column -->
@@ -29,8 +29,8 @@
     <th mat-header-cell *matHeaderCellDef> Acciones </th>
     <td mat-cell *matCellDef="let element"> 
       <button mat-raised-button color="success"
-        [routerLink]="['edicion', element?.id]">Actualizar</button>
-      <button mat-raised-button color="success2" (click)="confirmar(element.id)">Eliminar</button>
+        [routerLink]="['edicion', element?.idRole]">Actualizar</button>
+      <button mat-raised-button color="success2" (click)="confirmar(element.idRole)">Eliminar</button>
     </td>
   </ng-container>
 

@@ -28,14 +28,14 @@ ngOnInit(): void {
     });
   }
 
-confirmar(id: number) {
-    this.idMayor = id;
+confirmar(idTipoActividad: number) {
+    this.idMayor = idTipoActividad;
     this.dialog.open(TipoActividadDialogoComponent);
   }
 
 
-  eliminar(id: number) {
-    this.tas.eliminar(id).subscribe(() => {
+  eliminar(idTipoActividad: number) {
+    this.tas.eliminar(idTipoActividad).subscribe(() => {
       this.tas.listar().subscribe(data => {
         this.tas.setLista(data);/* se ejecuta la línea 27*/
       });

@@ -23,13 +23,13 @@ private confirmaEliminacion = new Subject<Boolean>()
     return this.listaCambio.asObservable();
   }
   modificar(tipohorario:TipoHorario){
-    return this.http.put(this.url + "/" + tipohorario.id, tipohorario);
+    return this.http.put(this.url + "/" + tipohorario.idTipoHorario, tipohorario);
   }
-  listarId(id: number) {
-    return this.http.get<TipoHorario>(`${this.url}/${id}`);
+  listarId(idTipoHorario: number) {
+    return this.http.get<TipoHorario>(`${this.url}/${idTipoHorario}`);
   }
-  eliminar(id: number) {
-    return this.http.delete(this.url + "/" + id);
+  eliminar(idTipoHorario: number) {
+    return this.http.delete(this.url + "/" + idTipoHorario);
   }
   getConfirmaEliminacion() {
     return this.confirmaEliminacion.asObservable();

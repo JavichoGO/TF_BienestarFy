@@ -11,12 +11,12 @@ export class TipoSuscripcionCreaeditaComponent implements OnInit {
   tiposuscripcion: TipoSuscripcion = new TipoSuscripcion();
   mensaje: string = "";
   edicion: boolean = false;
-  id: number = 0;
+  idTipoSuscripcion: number = 0;
   constructor(private tiposuscripcionService: TipoSuscripcionService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.route.params.subscribe((data: Params) => {
-      this.id = data['id'];
+      this.idTipoSuscripcion = data['id'];
       this.edicion = data['id'] != null;
       this.init();
     });
@@ -44,7 +44,7 @@ export class TipoSuscripcionCreaeditaComponent implements OnInit {
 
   init() {
     if (this.edicion) {
-      this.tiposuscripcionService.listarId(this.id).subscribe(data => {
+      this.tiposuscripcionService.listarId(this.idTipoSuscripcion).subscribe(data => {
         this.tiposuscripcion = data;
       })
     }

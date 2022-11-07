@@ -30,14 +30,14 @@ private confirmaEliminacion = new Subject<Boolean>()
   }
 
   modificar(tipoactividad: TipoActividad) {
-    return this.http.put(this.url + "/" + tipoactividad.id, tipoactividad);
+    return this.http.put(this.url + "/" + tipoactividad.idTipoActividad, tipoactividad);
   }
-  listarId(id: number) {
-    return this.http.get<TipoActividad>(`${this.url}/${id}`);
+  listarId(idTipoActividad: number) {
+    return this.http.get<TipoActividad>(`${this.url}/${idTipoActividad}`);
   }
 
-eliminar(id: number) {
-    return this.http.delete(this.url + "/" + id);
+eliminar(idTipoActividad: number) {
+    return this.http.delete(this.url + "/" + idTipoActividad);
   }
   getConfirmaEliminacion() {
     return this.confirmaEliminacion.asObservable();

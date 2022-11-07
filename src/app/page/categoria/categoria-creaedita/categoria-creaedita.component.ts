@@ -23,7 +23,7 @@ export class CategoriaCreaEditaComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe((data: Params) => {
-      this.id = data['id'];
+      this.idCategoria = data['id'];
       this.edicion = data['id'] != null;
       this.init();
     });
@@ -52,7 +52,7 @@ export class CategoriaCreaEditaComponent implements OnInit {
   }
   init() {
     if (this.edicion) {
-      this.categoriaService.listarId(this.id).subscribe(data => {
+      this.categoriaService.listarId(this.idCategoria).subscribe(data => {
         this.categoria = data;
       })
     }
