@@ -22,3 +22,18 @@ th {
 td{
   font-size: 15px;
 }
+button {
+  object-position: center;
+  font-size: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
+  text-align: center;
+}
+.mat-success2 {
+  color: #fff;
+  background-color: rgb(184, 71, 143);
+}
+.mat-success {
+  color: #fff;
+  background-color:#6610f2 ;
+}

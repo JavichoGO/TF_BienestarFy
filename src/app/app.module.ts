@@ -48,7 +48,12 @@ import { RoleBuscarComponent } from './page/role/role-buscar/role-buscar.compone
 import { RoleDialogoComponent } from './page/role/role-listar/role-dialogo/role-dialogo.component';
 import { DetalleReservaComponent } from './page/detalle-reserva/detalle-reserva.component';
 import { DetalleReservaListarComponent } from './page/detalle-reserva/detalle-reserva-listar/detalle-reserva-listar.component';
-
+import { UsuarioDialogoComponent } from './page/usuario/usuario-listar/usuario-dialogo/usuario-dialogo.component';
+import { UsuarioBuscarComponent } from './page/usuario/usuario-buscar/usuario-buscar.component';
+import { UsuarioCreaeditaComponent } from './page/usuario/usuario-creaedita/usuario-creaedita.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import {MatSelectModule} from '@angular/material/select';
 
 
 @NgModule({
@@ -90,7 +95,10 @@ import { DetalleReservaListarComponent } from './page/detalle-reserva/detalle-re
     RoleBuscarComponent,
     RoleDialogoComponent,
     DetalleReservaComponent,
-    DetalleReservaListarComponent
+    DetalleReservaListarComponent,
+    UsuarioDialogoComponent,
+    UsuarioBuscarComponent,
+    UsuarioCreaeditaComponent
   
   ],
   imports: [
@@ -105,6 +113,10 @@ import { DetalleReservaListarComponent } from './page/detalle-reserva/detalle-re
     MatIconModule,
     MatDialogModule,
     MatToolbarModule,
+    MatDatepickerModule,
+    MatSnackBarModule,
+    MatSelectModule
+
   
   ],
   providers: [],
