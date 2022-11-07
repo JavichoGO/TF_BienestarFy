@@ -16,6 +16,7 @@ import { TipoHorarioComponent } from './page/tipo-horario/tipo-horario.component
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HorarioComponent } from './page/horario/horario.component';
+import { UsuarioCreaeditaComponent } from './page/usuario/usuario-creaedita/usuario-creaedita.component';
 
 
 
@@ -33,7 +34,8 @@ const routes: Routes = [
   },
   {
     path:'usuario',component:UsuarioComponent,children:[
-  
+      { path: 'nuevo', component: UsuarioCreaeditaComponent },
+      { path: 'edicion/:id', component: UsuarioCreaeditaComponent }
     ]
   },
   {

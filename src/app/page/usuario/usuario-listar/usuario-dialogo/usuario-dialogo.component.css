@@ -1,0 +1,19 @@
+p {
+    font-size: 17px;
+    text-align: center;
+}
+
+button {
+    margin: 16px;
+    object-position: center;
+    font-size: 15px;
+    text-align: center;
+}
+.mat-success2 {
+    color: #fff;
+    background-color: rgb(184, 71, 143);
+  }
+  .mat-success {
+    color: #fff;
+    background-color:#6610f2 ;
+  }
