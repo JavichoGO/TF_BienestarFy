@@ -1,4 +1,4 @@
-import { TipoHorario } from './tipo-horario';
+import {TipoHorario } from './tipo-horario';
 import {Usuario} from './usuario';
 
 export class Horario {
@@ -7,6 +7,7 @@ export class Horario {
     descripcionHorario: string = "";
     fechaHorario: string="";
     horaHorario: string="";
-    idTipoHorario:TipoHorario=new TipoHorario();
-    idUsuario:Usuario = new Usuario();
+    usuario:Usuario = new Usuario();
+    tipoHorario:TipoHorario=new TipoHorario();
+    
 }

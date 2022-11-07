@@ -55,15 +55,15 @@ export class UsuarioCreaeditaComponent implements OnInit {
     if (this.usuario.nombreUsuario.length > 0 && this.idRoleSeleccionado > 0 && this.idCategoriaSeleccionado > 0 && this.idSuscripcionSeleccionado > 0) {
       let p = new Role();
       p.idRole = this.idRoleSeleccionado;
-      this.usuario.idRole = p;
+      this.usuario.role = p;
 
       let q = new Categoria();
       q.idCategoria = this.idCategoriaSeleccionado;
-      this.usuario.idCategoria = q;
+      this.usuario.categoria = q;
 
       let r = new Suscripcion();
       r.idSuscripcion = this.idSuscripcionSeleccionado;
-      this.usuario.idSuscripcion = r;
+      this.usuario.suscripcion = r;
 
       if (this.edicion) {
         this.uS.modificar(this.usuario).subscribe(() => {
@@ -97,9 +97,9 @@ export class UsuarioCreaeditaComponent implements OnInit {
       this.uS.listarId(this.idUsuario).subscribe(data => {
         this.usuario = data
         console.log(data);
-        this.idRoleSeleccionado = data.idRole.idRole;
-        this.idCategoriaSeleccionado = data.idCategoria.idCategoria;
-        this.idSuscripcionSeleccionado = data.idSuscripcion.idSuscripcion
+        this.idRoleSeleccionado = data.role.idRole
+        this.idCategoriaSeleccionado = data.categoria.idCategoria
+        this.idSuscripcionSeleccionado = data.suscripcion.idSuscripcion
       });
 
     }

@@ -5,6 +5,6 @@ export class Suscripcion {
     precioSuscripcion:number=0;
     fechaInicio:string="";
     fechaFin:string="";
-    idTipoSuscripcion:TipoSuscripcion=new TipoSuscripcion();
+    tipoSuscripcion:TipoSuscripcion=new TipoSuscripcion();
    
 }

@@ -8,22 +8,13 @@ import { MatDialogRef } from '@angular/material/dialog';
   styleUrls: ['./tipo-horario-dialogo.component.css']
 })
 export class TipoHorarioDialogoComponent implements OnInit {
-
- 
-
-  constructor(private tipohorarioService:TipoHorarioService, private dialogRef: MatDialogRef<TipoHorarioDialogoComponent>) {
-   
-
+  constructor(private tipohorarioService: TipoHorarioService, 
+    private dialogRef: MatDialogRef<TipoHorarioDialogoComponent>) {
   }
-
- ngOnInit(): void {
- }
-
-
- confirmar(estado:boolean){
-   this.tipohorarioService.setConfirmaEliminacion(estado);
-   this.dialogRef.close();
-   
-
- }
+  ngOnInit(): void {
+  }
+  confirmar(estado: boolean) {
+    this.tipohorarioService.setConfirmaEliminacion(estado);
+    this.dialogRef.close();
+  }
 }

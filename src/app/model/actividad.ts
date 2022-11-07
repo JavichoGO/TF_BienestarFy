@@ -6,6 +6,6 @@ export class Actividad{
   nombreActividad:string="";
   duracionActividad:number=0;
   descripcionActividad:string="";
-  idUsuario:Usuario=new Usuario();
-  idTipoActividad:TipoActividad = new TipoActividad() ;
+  usuario:Usuario=new Usuario();
+  tipoActividad:TipoActividad = new TipoActividad() ;
 }

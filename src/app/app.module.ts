@@ -50,10 +50,13 @@ import { DetalleReservaComponent } from './page/detalle-reserva/detalle-reserva.
 import { DetalleReservaListarComponent } from './page/detalle-reserva/detalle-reserva-listar/detalle-reserva-listar.component';
 import { UsuarioDialogoComponent } from './page/usuario/usuario-listar/usuario-dialogo/usuario-dialogo.component';
 import { UsuarioBuscarComponent } from './page/usuario/usuario-buscar/usuario-buscar.component';
-import { UsuarioCreaeditaComponent } from './page/usuario/usuario-creaedita/usuario-creaedita.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import {MatSelectModule} from '@angular/material/select';
+import {UsuarioCreaeditaComponent } from './page/usuario/usuario-creaedita/usuario-creaedita.component';
+import { HorarioCreaeditaComponent } from './page/horario/horario-creaedita/horario-creaedita.component';
+import { HorarioBuscarComponent } from './page/horario/horario-buscar/horario-buscar.component';
+import { HorarioDialogoComponent } from './page/horario/horario-listar/horario-dialogo/horario-dialogo.component';
 
 
 @NgModule({
@@ -98,7 +101,10 @@ import {MatSelectModule} from '@angular/material/select';
     DetalleReservaListarComponent,
     UsuarioDialogoComponent,
     UsuarioBuscarComponent,
-    UsuarioCreaeditaComponent
+    UsuarioCreaeditaComponent,
+    HorarioCreaeditaComponent,
+    HorarioBuscarComponent,
+    HorarioDialogoComponent
   
   ],
   imports: [
