@@ -6,11 +6,12 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class DetalleReservaService {
-  url:string="http://localhost:5100/detallereserva"
+  url: string = "http://localhost:5100/detallereserva"
 
-  constructor(private http:HttpClient) { 
+  constructor(private http: HttpClient) {
     listar(){
       return this.http.get<DetalleReserva[]>(this.url);
 
+    }
   }
 }

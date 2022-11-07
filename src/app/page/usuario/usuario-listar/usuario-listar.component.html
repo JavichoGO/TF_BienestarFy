@@ -47,17 +47,17 @@
   
   <ng-container matColumnDef="categoria">
   <th mat-header-cell *matHeaderCellDef> Categoria </th>
-    <td mat-cell *matCellDef="let element"> {{element.categoria.idCategoria}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.categoria.nombreCategoria}} </td>
   </ng-container>
   <!-- Position Column -->
   <ng-container matColumnDef="suscripcion">
     <th mat-header-cell *matHeaderCellDef> Suscripcion </th>
-    <td mat-cell *matCellDef="let element"> {{element.suscripcion.idSuscripcion}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.suscripcion.nombreSuscripcion}} </td>
   </ng-container>
 
   <ng-container matColumnDef="role">
     <th mat-header-cell *matHeaderCellDef> Rol </th>
-    <td mat-cell *matCellDef="let element"> {{element.role.idRole}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.role.nombreRole}} </td>
   </ng-container>
 
   <ng-container matColumnDef="acciones">

@@ -14,6 +14,7 @@ export class TipoHorarioListarComponent implements OnInit {
   dataSource: MatTableDataSource<TipoHorario> = new MatTableDataSource();
   displayedColumns: string[] = ['id', 'nombre', 'descripcion','acciones'];
   private idMayor: number = 0;
+  
   constructor(private ths:TipoHorarioService, private dialog: MatDialog) { }
 
   ngOnInit(): void {

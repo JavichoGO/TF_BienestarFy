@@ -13,7 +13,7 @@ export class CategoriaCreaEditaComponent implements OnInit {
   categoria: Categoria= new Categoria();
   mensaje: string= "";
   edicion: boolean= false;
-  id:number = 0;
+  idCategoria:number = 0;
 
   constructor(private categoriaService: CategoriaService, private router: Router
     ,private route: ActivatedRoute) { 

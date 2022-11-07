@@ -10,26 +10,37 @@ url:string="http://localhost:5100/tipohorario"
 private listaCambio = new Subject<TipoHorario[]>()
 private confirmaEliminacion = new Subject<Boolean>()
   constructor( private http:HttpClient) { }
-  listar(){
+  listar() {
     return this.http.get<TipoHorario[]>(this.url);
   }
   insertar(tipohorario: TipoHorario) {
+
     return this.http.post(this.url, tipohorario);
   }
-  setLista(listaNueva: TipoHorario[]) {
-    this.listaCambio.next(listaNueva);
+
+  modificar(tipohorario: TipoHorario) {
+
+    return this.http.put(this.url, tipohorario);
   }
-  getLista() {
-    return this.listaCambio.asObservable();
+  eliminar(idTipoHorario: number) {
+
+    return this.http.delete(`${this.url}/${idTipoHorario}`);
   }
-  modificar(tipohorario:TipoHorario){
-    return this.http.put(this.url + "/" + tipohorario.idTipoHorario, tipohorario);
+  buscar(texto:string) {
+        console.log("algo")
+    if (texto.length != 0) {
+      return this.http.post<TipoHorario[]>(`${this.url}/buscar`, texto.toLowerCase());
+    }
+    return EMPTY;
   }
   listarId(idTipoHorario: number) {
     return this.http.get<TipoHorario>(`${this.url}/${idTipoHorario}`);
   }
-  eliminar(idTipoHorario: number) {
-    return this.http.delete(this.url + "/" + idTipoHorario);
+  getLista() {
+    return this.listaCambio.asObservable();
+  }
+  setLista(listaNueva: TipoHorario[]) {
+    this.listaCambio.next(listaNueva);
   }
   getConfirmaEliminacion() {
     return this.confirmaEliminacion.asObservable();
@@ -37,13 +48,4 @@ private confirmaEliminacion = new Subject<Boolean>()
   setConfirmaEliminacion(estado: Boolean) {
     this.confirmaEliminacion.next(estado);
   }
-  buscar(texto: string) {
-    if (texto.length != 0) {
-      return this.http.post<TipoHorario[]>(`${this.url}/buscar`, texto.toLowerCase(), {
-      });
-    }
-    return EMPTY;
-  }
-
-  
 }

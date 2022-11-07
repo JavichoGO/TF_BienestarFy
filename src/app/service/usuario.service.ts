@@ -11,7 +11,9 @@ export class UsuarioService {
 
   private listaCambio = new Subject<Usuario[]>()
   private confirmaEliminacion = new Subject<Boolean>()
+
   constructor(private http: HttpClient) { }
+  
   listar() {
     return this.http.get<Usuario[]>(this.url);
   }

@@ -14,6 +14,7 @@ export class CategoriaListarComponent implements OnInit {
   dataSource: MatTableDataSource<Categoria> = new MatTableDataSource();
   displayedColumns: string[] = ['id', 'nombre', 'descripcion', 'acciones'];
   private idMayor: number = 0;
+  
   constructor(private cs: CategoriaService, private dialog: MatDialog) { }
 
   ngOnInit(): void {
