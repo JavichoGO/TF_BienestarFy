@@ -11,11 +11,15 @@ import { MatTableDataSource } from '@angular/material/table';
   templateUrl: './role-listar.component.html',
   styleUrls: ['./role-listar.component.css']
 })
+
 export class RoleListarComponent implements OnInit {
+
   dataSource: MatTableDataSource<Role> = new MatTableDataSource();
   displayedColumns: string[] = ['id', 'nombre', 'descripcion', 'acciones']
   private idMayor: number = 0;
-  constructor(private rs: RoleService, private dialog: MatDialog) { }
+
+  constructor(private rs: RoleService, 
+    private dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.rs.listar().subscribe(data => {

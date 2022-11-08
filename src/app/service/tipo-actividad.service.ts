@@ -8,49 +8,50 @@ import { Subject, EMPTY } from 'rxjs';
   providedIn: 'root'
 })
 export class TipoActividadService {
-url:string="http://localhost:5100/tipoactividad"
+url:string="http://localhost:8086/tipoactividad"
 
 private listaCambio = new Subject<TipoActividad[]>()
 private confirmaEliminacion = new Subject<Boolean>()
 
   constructor(private http:HttpClient) { }
-  listar(){
+  listar() {
     return this.http.get<TipoActividad[]>(this.url);
   }
-  insertar(tipoactividad: TipoActividad){
+  insertar(tipoactividad: TipoActividad) {
     return this.http.post(this.url, tipoactividad);
 
   }
-  setLista(listaNueva: TipoActividad[]) {
-    this.listaCambio.next(listaNueva);
+  modificar(tipoactividad: TipoActividad) {
+    return this.http.put(this.url, tipoactividad);
   }
-  
-  getLista() {
-    return this.listaCambio.asObservable();
+  eliminar(id: number) {
+    return this.http.delete(this.url + "/" + id);
+  }
+  buscar(texto: string) {
+    if (texto.length != 0) {
+      return this.http.post<TipoActividad[]>(`${this.url}/buscar`, texto.toLowerCase(), {
+      });
+    }
+    return EMPTY;
   }
 
-  modificar(tipoactividad: TipoActividad) {
-    return this.http.put(this.url + "/" + tipoactividad.id, tipoactividad);
-  }
   listarId(id: number) {
     return this.http.get<TipoActividad>(`${this.url}/${id}`);
   }
 
-eliminar(id: number) {
-    return this.http.delete(this.url + "/" + id);
+  getLista() {
+    return this.listaCambio.asObservable();
   }
+
+  setLista(listaNueva: TipoActividad[]) {
+    this.listaCambio.next(listaNueva);
+  }
+
   getConfirmaEliminacion() {
     return this.confirmaEliminacion.asObservable();
   }
   setConfirmaEliminacion(estado: Boolean) {
     this.confirmaEliminacion.next(estado);
-  }  
-buscar(texto: string) {
-    if (texto.length != 0) {
-      return this.http.post<TipoActividad[]>(`${this.url}/buscar`, texto.toLocaleUpperCase(), {
-      });
-    }
-    return EMPTY;
   }
 
 }

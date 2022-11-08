@@ -1,8 +1,6 @@
 <div class ="container">
-  <br><br><br><br>
-  <h1 >Suscripción</h1>
-  <br>
-  <br><br>
+  <h1 >SUSCRIPCIÓN</h1>
+  <app-suscripcion-buscar></app-suscripcion-buscar>
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
   <!--- Note that these columns can be defined in any order.
@@ -11,7 +9,7 @@
   <!-- Position Column -->
   <ng-container matColumnDef="id">
     <th mat-header-cell *matHeaderCellDef> Id </th>
-    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.idSuscripcion}} </td>
   </ng-container>
 
   <!-- Name Column -->
@@ -27,11 +25,11 @@
   </ng-container>
   <ng-container matColumnDef="fechainicio">
     <th mat-header-cell *matHeaderCellDef> Fecha Inicio </th>
-    <td mat-cell *matCellDef="let element"> {{element.fechaInicio}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.fechaInicioSuscripcion}} </td>
   </ng-container>
   <ng-container matColumnDef="fechafin">
     <th mat-header-cell *matHeaderCellDef> Fecha Fin </th>
-    <td mat-cell *matCellDef="let element"> {{element.fechaFin}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.fechaFinSuscripcion}} </td>
   </ng-container>
   <ng-container matColumnDef="tipo">
     <th mat-header-cell *matHeaderCellDef> Tipo </th>
@@ -39,5 +37,18 @@
   </ng-container>
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  <ng-container matColumnDef="acciones">
+    <th mat-header-cell *matHeaderCellDef> Acciones </th>
+    <td mat-cell *matCellDef= "let element">
+      <button mat-raised-button color="success"
+            [routerLink]= "['edicion', element.idSuscripcion]">Actualizar</button>
+      <button mat-raised-button color="success2" (click)="confirmar(element.idSuscripcion)">Eliminar</button>
+    </td>
+  </ng-container>
 </table>
+
+<button mat-mini-fab color="success" aria-label="Example icon button with a plus one icon"
+    routerLink="/suscripcion/nuevo">
+    <mat-icon>plus_one</mat-icon>
+  </button>
 </div>

@@ -11,18 +11,18 @@ export class TipoSuscripcionCreaeditaComponent implements OnInit {
   tiposuscripcion: TipoSuscripcion = new TipoSuscripcion();
   mensaje: string = "";
   edicion: boolean = false;
-  id: number = 0;
+  idTipoSuscripcion: number = 0;
   constructor(private tiposuscripcionService: TipoSuscripcionService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.route.params.subscribe((data: Params) => {
-      this.id = data['id'];
+      this.idTipoSuscripcion = data['id'];
       this.edicion = data['id'] != null;
       this.init();
     });
   }
   aceptar(): void {
-    if (this.tiposuscripcion.nombreTipoSuscripcion.length > 0 && this.tiposuscripcion.descripcionTipoSucripcion.length >0) {
+    if (this.tiposuscripcion.nombreTipoSuscripcion.length > 0 && this.tiposuscripcion.descripcionTipoSuscripcion.length > 0) {
       if (this.edicion) {
         this.tiposuscripcionService.modificar(this.tiposuscripcion).subscribe(data => {
           this.tiposuscripcionService.listar().subscribe(data => {
@@ -30,6 +30,7 @@ export class TipoSuscripcionCreaeditaComponent implements OnInit {
           })
         })
       } else {
+
         this.tiposuscripcionService.insertar(this.tiposuscripcion).subscribe(data => {
           this.tiposuscripcionService.listar().subscribe(data => {
             this.tiposuscripcionService.setLista(data);
@@ -41,13 +42,13 @@ export class TipoSuscripcionCreaeditaComponent implements OnInit {
       this.mensaje = "Complete los valores requeridos";
     }
   }
-
   init() {
     if (this.edicion) {
-      this.tiposuscripcionService.listarId(this.id).subscribe(data => {
+      this.tiposuscripcionService.listarId(this.idTipoSuscripcion).subscribe(data => {
         this.tiposuscripcion = data;
       })
     }
+
   }
 
 

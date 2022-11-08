@@ -16,9 +16,9 @@ export class TipoActividadCreaEditaComponent implements OnInit {
   edicion: boolean= false;
   id:number = 0;
 
-  constructor(private tipoactividadService: TipoActividadService, private router: Router
-    ,private route: ActivatedRoute) { 
-
+  constructor(private tipoactividadService: TipoActividadService,
+    private router: Router
+    ,private route: ActivatedRoute) {
 
   }
 
@@ -28,7 +28,7 @@ export class TipoActividadCreaEditaComponent implements OnInit {
       this.edicion = data['id'] != null;
       this.init();
     });
-    
+
   }
   aceptar(): void {
     if (this.tipoactividad.nombreTipoActividad.length > 0 && this.tipoactividad.descripcionTipoActividad.length > 0) {

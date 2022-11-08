@@ -9,7 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RoleDialogoComponent implements OnInit {
 
-  constructor(private roleService:RoleService,private dialogRef:MatDialogRef<RoleDialogoComponent>) { }
+  constructor(private roleService:RoleService,
+    private dialogRef:MatDialogRef<RoleDialogoComponent>) { }
 
   ngOnInit(): void {
   }

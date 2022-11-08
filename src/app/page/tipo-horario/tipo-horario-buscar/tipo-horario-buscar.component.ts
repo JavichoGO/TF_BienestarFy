@@ -9,7 +9,7 @@ import { TipoHorarioService } from 'src/app/service/tipo-horario.service';
 })
 
 export class TipoHorarioBuscarComponent implements OnInit {
-textoBuscar: string = "";
+  textoBuscar: string = "";
 
   constructor(private tipohorarioService : TipoHorarioService) { }
 

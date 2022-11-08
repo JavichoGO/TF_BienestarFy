@@ -6,7 +6,7 @@ import { Subject , EMPTY} from 'rxjs';
   providedIn: 'root'
 })
 export class TipoSuscripcionService {
-  url: string = "http://localhost:5100/tiposuscripcion"
+  url: string = "http://localhost:8086/tiposuscripcion"
   private listaCambio = new Subject<TipoSuscripcion[]>()
   private confirmaEliminacion = new Subject<Boolean>()
   constructor(private http: HttpClient) { }
@@ -23,7 +23,7 @@ export class TipoSuscripcionService {
     return this.listaCambio.asObservable();
   }
   modificar(tiposuscripcion: TipoSuscripcion) {
-    return this.http.put(this.url + "/" + tiposuscripcion.id, tiposuscripcion);
+    return this.http.put(this.url + "/" + tiposuscripcion.idTipoSuscripcion, tiposuscripcion);
   }
   listarId(id: number) {
     return this.http.get<TipoSuscripcion>(`${this.url}/${id}`);

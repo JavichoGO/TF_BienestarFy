@@ -1,10 +1,10 @@
 import { TipoSuscripcion } from "./tipo-suscripcion";
 export class Suscripcion {
-    id: number=0;
+    idSuscripcion: number=0;
     nombreSuscripcion:string="";
     precioSuscripcion:number=0;
-    fechaInicio:string="";
-    fechaFin:string="";
+    fechaInicioSuscripcion:string="";
+    fechaFinSuscripcion:string="";
     tipoSuscripcion:TipoSuscripcion=new TipoSuscripcion();
    
 }

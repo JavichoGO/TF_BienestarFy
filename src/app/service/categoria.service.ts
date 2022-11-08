@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class CategoriaService {
-  url: string = "http://localhost:5100/categoria"
+  url: string = "http://localhost:8086/categoria"
 
   private listaCambio = new Subject<Categoria[]>()
   private confirmaEliminacion = new Subject<Boolean>()
@@ -28,7 +28,7 @@ export class CategoriaService {
   }
 
   modificar(categoria: Categoria) {
-    return this.http.put(this.url + "/" + categoria.id, categoria);
+    return this.http.put(this.url + "/" + categoria.idCategoria, categoria);
   }
   listarId(id: number) {
     return this.http.get<Categoria>(`${this.url}/${id}`);
