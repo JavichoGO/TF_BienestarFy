@@ -12,7 +12,7 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class DetalleReservaListarComponent implements OnInit {
   dataSource: MatTableDataSource<DetalleReserva> = new MatTableDataSource();
-  displayedColumns: string[] = ['id', 'descripcion','reserva','actividad','acciones'];
+  displayedColumns: string[] = ['id','nombre', 'descripcion','reserva','actividad','acciones'];
   private idMayor: number = 0;
   
   constructor(private drS: DetalleReservaService, private dialog: MatDialog) { }

@@ -3,12 +3,13 @@ import { Actividad } from './../model/actividad';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { EMPTY, Subject } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ActividadService {
-  url:string="http://localhost:8086/actividad"
+  private url: string = `${environment.host}/actividad`
 
   private listaCambio = new Subject<Actividad[]>()
   private confirmaEliminacion = new Subject<Boolean>()

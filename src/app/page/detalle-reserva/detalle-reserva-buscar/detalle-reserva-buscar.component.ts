@@ -17,7 +17,7 @@ export class DetalleReservaBuscarComponent implements OnInit {
     let array: DetalleReserva[] = [];
     this.drS.listar().subscribe(data => {
       data.forEach((element, index) => {
-        if (element.descripcionDetalleReserva.toUpperCase().includes(e.target.value.toUpperCase())) {
+        if (element.nombreDetalleReserva.toUpperCase().includes(e.target.value.toUpperCase())) {
           array.push(data[index]);
         }
       });

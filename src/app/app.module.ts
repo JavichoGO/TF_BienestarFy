@@ -63,6 +63,11 @@ import { ActividadBuscarComponent } from './page/actividad/actividad-buscar/acti
 import { ActividadCreaeditaComponent } from './page/actividad/actividad-creaedita/actividad-creaedita.component';
 import { ActividadDialogoComponent } from './page/actividad/actividad-listar/actividad-dialogo/actividad-dialogo.component';
 import { UsuarioBuscarComponent } from './page/usuario/usuario-buscar/usuario-buscar.component';
+import { SuscripcionBuscarComponent } from './page/suscripcion/suscripcion-buscar/suscripcion-buscar.component';
+import { SuscripcionCreaeditaComponent } from './page/suscripcion/suscripcion-creaedita/suscripcion-creaedita.component';
+import { SuscripcionDialogoComponent } from './page/suscripcion/suscripcion-listar/suscripcion-dialogo/suscripcion-dialogo.component';
+import { ReservaBuscarComponent } from './page/reserva/reserva-buscar/reserva-buscar.component';
+import { ReservaCreaeditaComponent } from './page/reserva/reserva-creaedita/reserva-creaedita.component';
 
 
 @NgModule({
@@ -116,7 +121,12 @@ import { UsuarioBuscarComponent } from './page/usuario/usuario-buscar/usuario-bu
     DetalleReservaDialogoComponent,
     ActividadBuscarComponent,
     ActividadCreaeditaComponent,
-    ActividadDialogoComponent
+    ActividadDialogoComponent,
+    SuscripcionBuscarComponent,
+    SuscripcionCreaeditaComponent,
+    SuscripcionDialogoComponent,
+    ReservaBuscarComponent,
+    ReservaCreaeditaComponent,
   
   ],
   imports: [
