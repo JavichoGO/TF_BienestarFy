@@ -19,6 +19,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HorarioComponent } from './page/horario/horario.component';
 import { UsuarioCreaeditaComponent } from './page/usuario/usuario-creaedita/usuario-creaedita.component';
 import { ActividadCreaeditaComponent } from './page/actividad/actividad-creaedita/actividad-creaedita.component';
+import { HorarioCreaeditaComponent } from './page/horario/horario-creaedita/horario-creaedita.component';
 
 
 
@@ -31,6 +32,8 @@ const routes: Routes = [
     ]
   },{
     path:'horario',component:HorarioComponent,children:[
+      { path: 'nuevo', component: HorarioCreaeditaComponent },
+      { path: 'edicion/:id', component: HorarioCreaeditaComponent }
   
     ]
   },
