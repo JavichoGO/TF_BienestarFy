@@ -1,7 +1,7 @@
 <div class ="container">
   <h1 >DETALLE RESERVA</h1>
 
-  <app-reserva-buscar></app-reserva-buscar>
+  <app-detalle-reserva-buscar></app-detalle-reserva-buscar>
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
   
       <!--- Note that these columns can be defined in any order.
@@ -23,11 +23,11 @@
         </ng-container>
       <ng-container matColumnDef="reserva">
         <th mat-header-cell *matHeaderCellDef> Reserva </th>
-        <td mat-cell *matCellDef="let element"> {{element.usuario.idReserva}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.reserva.nombreReserva}} </td>
       </ng-container>
       <ng-container matColumnDef="actividad">
         <th mat-header-cell *matHeaderCellDef> Actividad </th>
-        <td mat-cell *matCellDef="let element"> {{element.actividad.nombreactividad}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.actividad.nombreActividad}} </td>
       </ng-container>
  
       <ng-container matColumnDef="acciones">
