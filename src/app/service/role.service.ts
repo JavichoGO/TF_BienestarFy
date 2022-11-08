@@ -2,12 +2,13 @@ import { Role } from './../model/role';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Subject,EMPTY } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RoleService {
-  url:string="http://localhost:5100/role"
+  private url: string = `${environment.host}/role`
 
   private listaCambio = new Subject<Role[]>()
   private confirmaEliminacion = new Subject<Boolean>()
@@ -28,13 +29,13 @@ export class RoleService {
   }
 
   modificar(role: Role) {
-    return this.http.put(this.url + "/" + role.id, role);
+    return this.http.put(this.url, role);
   }
-  listarId(id: number) {
-    return this.http.get<Role>(`${this.url}/${id}`);
+  listarId(idRole: number) {
+    return this.http.get<Role>(`${this.url}/${idRole}`);
   }
-  eliminar(id: number) {
-    return this.http.delete(this.url + "/" + id);
+  eliminar(idRole: number) {
+    return this.http.delete(this.url + "/" + idRole);
   }
   getConfirmaEliminacion() {
     return this.confirmaEliminacion.asObservable();

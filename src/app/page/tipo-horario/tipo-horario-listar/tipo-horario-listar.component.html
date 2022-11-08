@@ -1,6 +1,5 @@
 <div class="container">
-  <br><br><br><br>
-  <h1 >Tipo de Horario</h1>
+  <h1 >TIPO DE HORARIO</h1>
 
   <app-tipo-horario-buscar></app-tipo-horario-buscar>
 
@@ -12,7 +11,7 @@
     <!-- Position Column -->
     <ng-container matColumnDef="id">
       <th mat-header-cell *matHeaderCellDef> id </th>
-      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.idTipoHorario}} </td>
     </ng-container>
 
     <!-- Name Column -->
@@ -31,8 +30,8 @@
       <th mat-header-cell *matHeaderCellDef> Acciones </th>
       <td mat-cell *matCellDef="let element"> 
         <button mat-raised-button color="success"
-          [routerLink]="['edicion', element?.id]">Actualizar</button>
-        <button mat-raised-button color="success2" (click)="confirmar(element.id)">Eliminar</button>
+          [routerLink]="['edicion', element?.idTipoHorario]">Actualizar</button>
+        <button mat-raised-button color="success2" (click)="confirmar(element.idTipoHorario)">Eliminar</button>
       </td>
     </ng-container>
     

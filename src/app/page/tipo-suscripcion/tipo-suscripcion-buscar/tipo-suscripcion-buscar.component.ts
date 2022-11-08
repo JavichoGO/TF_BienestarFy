@@ -18,7 +18,7 @@ export class TipoSuscripcionBuscarComponent implements OnInit {
     let array: TipoSuscripcion[] = [];
     this.tiposuscripcionService.listar().subscribe(data => {
       data.forEach((element, index) => {
-        if (element.nombreTipoSuscripcion.toUpperCase().includes(e.target.value.toUpperCase())||element.descripcionTipoSucripcion.toUpperCase().includes(e.target.value.toUpperCase())) {
+        if (element.nombreTipoSuscripcion.toUpperCase().includes(e.target.value.toUpperCase())||element.descripcionTipoSuscripcion.toUpperCase().includes(e.target.value.toUpperCase())) {
           array.push(data[index]);
         }
       });

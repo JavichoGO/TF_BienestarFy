@@ -1,34 +1,30 @@
-
 <div class="container">
-  <br><br><br><br>
-  <h1 >Añadir Tipo de Actividad
+  <h1 >AÑADIR TIPO ACTIVIDAD
   </h1>
-  <br>
-  <br><br>
     <mat-form-field  class="example-full-width">
       <mat-label>Id</mat-label>
-      <input matInput placeholder="Id" [(ngModel)]="tipoactividad.id">
+      <input matInput placeholder="Id" [(ngModel)]="tipoActividad.idTipoActividad">
     </mat-form-field>
-  
+
     <br>
-  
+
     <mat-form-field class="example-full-width">
       <mat-label>Nombre</mat-label>
-      <input matInput required placeholder="name" [(ngModel)]="tipoactividad.nombreTipoActividad">
-  
+      <input matInput required placeholder="nombre" [(ngModel)]="tipoActividad.nombreTipoActividad">
+
     </mat-form-field>
-  
+
     <br>
     <mat-form-field class="example-full-width">
       <mat-label>Descripcion</mat-label>
-      <input type="email" matInput required placeholder="email" [(ngModel)]="tipoactividad.descripcionTipoActividad">
+      <input type="descripcion" matInput required placeholder="descripcion" [(ngModel)]="tipoActividad.descripcionTipoActividad">
     </mat-form-field>
 
-    
-  
+
+
     <br>
     <button mat-raised-button color="success" (click)="aceptar()">Aceptar</button>
     <button mat-raised-button color="success2" routerLink="/tipoactividad">Cancelar</button>
     <p>{{mensaje}}</p>
-  
+
   </div>

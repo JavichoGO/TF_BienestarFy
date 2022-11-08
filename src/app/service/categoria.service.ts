@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment';
 import { Subject, EMPTY} from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Categoria } from './../model/categoria';
@@ -7,7 +8,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class CategoriaService {
-  url: string = "http://localhost:5100/categoria"
+  private url: string = `${environment.host}/categoria`
 
   private listaCambio = new Subject<Categoria[]>()
   private confirmaEliminacion = new Subject<Boolean>()
@@ -28,13 +29,13 @@ export class CategoriaService {
   }
 
   modificar(categoria: Categoria) {
-    return this.http.put(this.url + "/" + categoria.id, categoria);
+    return this.http.put(this.url, categoria);
   }
-  listarId(id: number) {
-    return this.http.get<Categoria>(`${this.url}/${id}`);
+  listarId(idCategoria: number) {
+    return this.http.get<Categoria>(`${this.url}/${idCategoria}`);
   }
-  eliminar(id: number) {
-    return this.http.delete(this.url + "/" + id);
+  eliminar(idCategoria: number) {
+    return this.http.delete(this.url + "/" + idCategoria);
   }
   getConfirmaEliminacion() {
     return this.confirmaEliminacion.asObservable();

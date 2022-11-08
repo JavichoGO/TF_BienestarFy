@@ -1,7 +1,7 @@
 export class TipoSuscripcion {
-    id: number=0;
+    idTipoSuscripcion: number=0;
     nombreTipoSuscripcion: string="";
-    descripcionTipoSucripcion:string="";
+    descripcionTipoSuscripcion:string="";
     descuentoTipoSuscripcion:number=0;
   
   }

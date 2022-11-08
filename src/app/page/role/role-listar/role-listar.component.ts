@@ -29,14 +29,14 @@ export class RoleListarComponent implements OnInit {
     });
   }
 
-  confirmar(id: number) {
-    this.idMayor = id;
+  confirmar(idRole: number) {
+    this.idMayor = idRole;
     this.dialog.open(RoleDialogoComponent);
   }
 
 
-  eliminar(id: number) {
-    this.rs.eliminar(id).subscribe(() => {
+  eliminar(idRole: number) {
+    this.rs.eliminar(idRole).subscribe(() => {
       this.rs.listar().subscribe(data => {
         this.rs.setLista(data);/* se ejecuta la línea 27*/
       });
