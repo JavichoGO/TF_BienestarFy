@@ -12,7 +12,7 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class TipoActividadListarComponent implements OnInit {
   dataSource: MatTableDataSource<TipoActividad> = new MatTableDataSource();
-  displayedColumns: string[] = ['id', 'nombre', 'descripcion','acciones']; 
+  displayedColumns: string[] = ['id', 'nombre', 'descripcion','acciones'];
   private idMayor: number = 0;
   constructor(private tas:TipoActividadService, private dialog: MatDialog) { }
 
@@ -28,14 +28,14 @@ ngOnInit(): void {
     });
   }
 
-confirmar(idTipoActividad: number) {
-    this.idMayor = idTipoActividad;
+confirmar(id: number) {
+    this.idMayor = id;
     this.dialog.open(TipoActividadDialogoComponent);
   }
 
 
-  eliminar(idTipoActividad: number) {
-    this.tas.eliminar(idTipoActividad).subscribe(() => {
+  eliminar(id: number) {
+    this.tas.eliminar(id).subscribe(() => {
       this.tas.listar().subscribe(data => {
         this.tas.setLista(data);/* se ejecuta la línea 27*/
       });

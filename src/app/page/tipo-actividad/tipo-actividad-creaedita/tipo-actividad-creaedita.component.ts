@@ -14,21 +14,21 @@ export class TipoActividadCreaEditaComponent implements OnInit {
   tipoactividad: TipoActividad= new TipoActividad();
   mensaje: string= "";
   edicion: boolean= false;
-  idTipoActividad:number = 0;
+  id:number = 0;
 
-  constructor(private tipoactividadService: TipoActividadService, private router: Router
-    ,private route: ActivatedRoute) { 
-
+  constructor(private tipoactividadService: TipoActividadService,
+    private router: Router
+    ,private route: ActivatedRoute) {
 
   }
 
   ngOnInit(): void {
     this.route.params.subscribe((data: Params) => {
-      this.idTipoActividad = data['id'];
+      this.id = data['id'];
       this.edicion = data['id'] != null;
       this.init();
     });
-    
+
   }
   aceptar(): void {
     if (this.tipoactividad.nombreTipoActividad.length > 0 && this.tipoactividad.descripcionTipoActividad.length > 0) {
@@ -53,7 +53,7 @@ export class TipoActividadCreaEditaComponent implements OnInit {
   }
   init() {
     if (this.edicion) {
-      this.tipoactividadService.listarId(this.idTipoActividad).subscribe(data => {
+      this.tipoactividadService.listarId(this.id).subscribe(data => {
         this.tipoactividad = data;
       })
     }
