@@ -8,11 +8,11 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
   styleUrls: ['./tipo-suscripcion-creaedita.component.css']
 })
 export class TipoSuscripcionCreaeditaComponent implements OnInit {
-  tiposuscripcion: TipoSuscripcion = new TipoSuscripcion();
+  tipoSuscripcion: TipoSuscripcion = new TipoSuscripcion();
   mensaje: string = "";
   edicion: boolean = false;
   idTipoSuscripcion: number = 0;
-  constructor(private tiposuscripcionService: TipoSuscripcionService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private tipoSuscripcionService: TipoSuscripcionService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.route.params.subscribe((data: Params) => {
@@ -22,17 +22,17 @@ export class TipoSuscripcionCreaeditaComponent implements OnInit {
     });
   }
   aceptar(): void {
-    if (this.tiposuscripcion.nombreTipoSuscripcion.length > 0 && this.tiposuscripcion.descripcionTipoSuscripcion.length >0) {
+    if (this.tipoSuscripcion.nombreTipoSuscripcion.length > 0 && this.tipoSuscripcion.descripcionTipoSuscripcion.length >0) {
       if (this.edicion) {
-        this.tiposuscripcionService.modificar(this.tiposuscripcion).subscribe(data => {
-          this.tiposuscripcionService.listar().subscribe(data => {
-            this.tiposuscripcionService.setLista(data);
+        this.tipoSuscripcionService.modificar(this.tipoSuscripcion).subscribe(data => {
+          this.tipoSuscripcionService.listar().subscribe(data => {
+            this.tipoSuscripcionService.setLista(data);
           })
         })
       } else {
-        this.tiposuscripcionService.insertar(this.tiposuscripcion).subscribe(data => {
-          this.tiposuscripcionService.listar().subscribe(data => {
-            this.tiposuscripcionService.setLista(data);
+        this.tipoSuscripcionService.insertar(this.tipoSuscripcion).subscribe(data => {
+          this.tipoSuscripcionService.listar().subscribe(data => {
+            this.tipoSuscripcionService.setLista(data);
           })
         })
       }
@@ -44,8 +44,8 @@ export class TipoSuscripcionCreaeditaComponent implements OnInit {
 
   init() {
     if (this.edicion) {
-      this.tiposuscripcionService.listarId(this.idTipoSuscripcion).subscribe(data => {
-        this.tiposuscripcion = data;
+      this.tipoSuscripcionService.listarId(this.idTipoSuscripcion).subscribe(data => {
+        this.tipoSuscripcion = data;
       })
     }
   }

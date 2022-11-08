@@ -1,6 +1,6 @@
 <div class="container">
     <br><br><br><br>
-    <h1 >Añadir Categoria</h1>
+    <h1 >Añadir Detalle Reserva</h1>
     <br>
     <br><br>
       <mat-form-field class="example-full-width">
@@ -29,7 +29,7 @@
       <mat-form-field appearance="fill">
           <mat-label>Seleccione Reserva</mat-label>
           <mat-select [(value)]="idReservaSeleccionado" required>
-              <mat-option *ngFor="let p of listaReservas" [value]="p.idReserva"></mat-option>
+              <mat-option *ngFor="let p of listaReservas" [value]="p.idReserva"> {{p.nombreReserva}}</mat-option>
           </mat-select>
       </mat-form-field>
       <br>

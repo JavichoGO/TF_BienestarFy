@@ -14,8 +14,8 @@ export class TipoSuscripcionService {
   listar() {
     return this.http.get<TipoSuscripcion[]>(this.url);
   }
-  insertar(tiposuscripcion: TipoSuscripcion) {
-    return this.http.post(this.url, tiposuscripcion);
+  insertar(tipoSuscripcion: TipoSuscripcion) {
+    return this.http.post(this.url, tipoSuscripcion);
   }
   setLista(listaNueva: TipoSuscripcion[]) {
     this.listaCambio.next(listaNueva);
@@ -23,8 +23,8 @@ export class TipoSuscripcionService {
   getLista() {
     return this.listaCambio.asObservable();
   }
-  modificar(tiposuscripcion: TipoSuscripcion) {
-    return this.http.put(this.url + "/" + tiposuscripcion.idTipoSuscripcion, tiposuscripcion);
+  modificar(tipoSuscripcion: TipoSuscripcion) {
+    return this.http.put(this.url, tipoSuscripcion);
   }
   listarId(idTipoSuscripcion: number) {
     return this.http.get<TipoSuscripcion>(`${this.url}/${idTipoSuscripcion}`);

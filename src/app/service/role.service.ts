@@ -29,7 +29,7 @@ export class RoleService {
   }
 
   modificar(role: Role) {
-    return this.http.put(this.url + "/" + role.idRole, role);
+    return this.http.put(this.url, role);
   }
   listarId(idRole: number) {
     return this.http.get<Role>(`${this.url}/${idRole}`);
