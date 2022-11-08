@@ -1,20 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 table {
   width: 100%;
   text-align: center;
-  background-color: rgb(255, 234, 250);
+  background-color: #dbf0ff;
   border-collapse: collapse;
   font-size: 142px;
 }
 
 h1 {
+  padding-top: 13%;
+  padding-bottom: 3%;
   text-align: center;
   font-size: 50px;
-  color: rgb(0, 0, 88);
+  font-family: 'Poppins';
+  font-weight: 600;
+  color: rgb(42, 41, 41);
 }
 
 th {
   text-align: center;
-  background-color: rgb(184, 71, 143);
+  background-color: #4692ff;
   border-bottom: solid 5px;
   color: white;
   font-size: 18px;
@@ -31,9 +37,9 @@ button {
 }
 .mat-success2 {
   color: #fff;
-  background-color: rgb(184, 71, 143);
+  background-color: #f9516b;
 }
 .mat-success {
   color: #fff;
-  background-color:#6610f2 ;
+  background-color: #5cd2fa;
 }

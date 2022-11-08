@@ -1,6 +1,7 @@
-export class TipoActividad{
-    id:number=0;
-    nombreTipoActividad:string="";
-    descripcionTipoActividad:string="";
-  }
-  
+
+export class TipoActividad {
+
+  idTipoActividad: number = 0;
+  nombreTipoActividad:string="";
+  descripcionTipoActividad:string="";
+}

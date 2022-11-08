@@ -2,9 +2,10 @@ import { Usuario } from './usuario';
 import { TipoActividad } from "./tipo-actividad";
 
 export class Actividad{
-  id:number=0;
-  nombreActvidad:string="";
+  idActividad:number = 0;
+  nombreActividad:string="";
   descripcionActividad:string="";
-  usuario:Usuario=new Usuario();
-  tipoActividad:TipoActividad = new TipoActividad() ;
+  duracionActividad:number=0;
+  usuario: Usuario = new Usuario();
+  tipoactividad: TipoActividad = new TipoActividad() ;
 }

@@ -11,9 +11,11 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 export class RoleCreaeditaComponent implements OnInit {
 
   role: Role = new Role();
-  mensaje: string = "";
-  edicion: boolean = false;
   id: number = 0;
+  edicion: boolean = false;
+  mensaje: string = "";
+
+
 
   constructor(private roleService: RoleService, private router: Router
     , private route: ActivatedRoute) { }

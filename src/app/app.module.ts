@@ -37,6 +37,11 @@ import { TipoSuscripcionCreaeditaComponent } from './page/tipo-suscripcion/tipo-
 import { CategoriaBuscarComponent } from './page/categoria/categoria-buscar/categoria-buscar.component';
 import { CategoriaDialogoComponent } from './page/categoria/categoria-listar/categoria-dialogo/categoria-dialogo.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { DateAdapter, MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
+import { MatSelectModule } from '@angular/material/select';
 import { TipoActividadBuscarComponent } from './page/tipo-actividad/tipo-actividad-buscar/tipo-actividad-buscar.component';
 import { TipoActividadDialogoComponent } from './page/tipo-actividad/tipo-actividad-listar/tipo-actividad-dialogo/tipo-actividad-dialogo.component';
 import { TipoSuscripcionDialogoComponent } from './page/tipo-suscripcion/tipo-suscripcion-listar/tipo-suscripcion-dialogo/tipo-suscripcion-dialogo.component';
@@ -46,6 +51,12 @@ import { TipoHorarioDialogoComponent } from './page/tipo-horario/tipo-horario-li
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { RoleBuscarComponent } from './page/role/role-buscar/role-buscar.component';
 import { RoleDialogoComponent } from './page/role/role-listar/role-dialogo/role-dialogo.component';
+import { UsuarioBuscarComponent } from './page/usuario/usuario-buscar/usuario-buscar.component';
+import { UsuarioCreaeditaComponent } from './page/usuario/usuario-creaedita/usuario-creaedita.component';
+import { UsuarioDialogoComponent } from './page/usuario/usuario-listar/usuario-dialogo/usuario-dialogo.component';
+import { ActividadDialogoComponent } from './page/actividad/actividad-listar/actividad-dialogo/actividad-dialogo.component';
+import { ActividadCreaeditaComponent } from './page/actividad/actividad-creaedita/actividad-creaedita.component';
+import { ActividadBuscarComponent } from './page/actividad/actividad-buscar/actividad-buscar.component';
 
 
 
@@ -86,21 +97,34 @@ import { RoleDialogoComponent } from './page/role/role-listar/role-dialogo/role-
     TipoHorarioBuscarComponent,
     TipoHorarioDialogoComponent,
     RoleBuscarComponent,
-    RoleDialogoComponent
+    RoleDialogoComponent,
+    UsuarioBuscarComponent,
+    UsuarioCreaeditaComponent,
+    UsuarioDialogoComponent,
+    ActividadDialogoComponent,
+    ActividadCreaeditaComponent,
+    ActividadBuscarComponent
   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
     BrowserAnimationsModule,
     MatTableModule,
     MatInputModule,
-    FormsModule,
     MatButtonModule,
     MatIconModule,
     MatDialogModule,
-    MatToolbarModule,
+    MatToolbarModule,    
+    MatSelectModule,
+
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSnackBarModule,
+    MatFormFieldModule
+
   
   ],
   providers: [],

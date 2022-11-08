@@ -1,4 +1,3 @@
-
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { TipoActividadService } from 'src/app/service/tipo-actividad.service';
@@ -12,9 +11,9 @@ export class TipoActividadDialogoComponent implements OnInit {
 
 
   constructor(private tipoactividadService:TipoActividadService, private dialogRef: MatDialogRef<TipoActividadDialogoComponent>) {
-   
 
-   }
+
+  }
 
   ngOnInit(): void {
   }
@@ -23,7 +22,7 @@ export class TipoActividadDialogoComponent implements OnInit {
   confirmar(estado:boolean){
     this.tipoactividadService.setConfirmaEliminacion(estado);
     this.dialogRef.close();
-    
+
 
   }
 
