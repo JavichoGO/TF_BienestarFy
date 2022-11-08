@@ -1,5 +1,5 @@
 export class TipoHorario{
-    id:number=0;
+    idTipoHorario:number=0;
     nombreTipoHorario: string="";
     descripcionTipoHorario:string="";
 }

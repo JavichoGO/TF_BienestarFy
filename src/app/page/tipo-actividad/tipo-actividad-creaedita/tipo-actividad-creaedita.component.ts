@@ -11,14 +11,14 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 })
 export class TipoActividadCreaEditaComponent implements OnInit {
 
-  tipoactividad: TipoActividad= new TipoActividad();
+  tipoActividad: TipoActividad= new TipoActividad();
   mensaje: string= "";
   edicion: boolean= false;
   id:number = 0;
 
-  constructor(private tipoactividadService: TipoActividadService, private router: Router
-    ,private route: ActivatedRoute) { 
-
+  constructor(private tipoactividadService: TipoActividadService,
+    private router: Router
+    ,private route: ActivatedRoute) {
 
   }
 
@@ -28,19 +28,19 @@ export class TipoActividadCreaEditaComponent implements OnInit {
       this.edicion = data['id'] != null;
       this.init();
     });
-    
+
   }
   aceptar(): void {
-    if (this.tipoactividad.nombreTipoActividad.length > 0 && this.tipoactividad.descripcionTipoActividad.length > 0) {
+    if (this.tipoActividad.nombreTipoActividad.length > 0 && this.tipoActividad.descripcionTipoActividad.length > 0) {
       if (this.edicion) {
-        this.tipoactividadService.modificar(this.tipoactividad).subscribe(data => {
+        this.tipoactividadService.modificar(this.tipoActividad).subscribe(data => {
           this.tipoactividadService.listar().subscribe(data => {
             this.tipoactividadService.setLista(data);
           })
         })
       } else {
 
-        this.tipoactividadService.insertar(this.tipoactividad).subscribe(data => {
+        this.tipoactividadService.insertar(this.tipoActividad).subscribe(data => {
           this.tipoactividadService.listar().subscribe(data => {
             this.tipoactividadService.setLista(data);
           })
@@ -54,7 +54,7 @@ export class TipoActividadCreaEditaComponent implements OnInit {
   init() {
     if (this.edicion) {
       this.tipoactividadService.listarId(this.id).subscribe(data => {
-        this.tipoactividad = data;
+        this.tipoActividad = data;
       })
     }
 

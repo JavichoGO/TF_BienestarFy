@@ -1,8 +1,7 @@
 <div class ="container">
-  <br><br><br><br>
-  <h1 >Usuario</h1>
-  <br>
-  <br><br>
+  <h1 >USUARIO</h1>
+
+  <app-usuario-buscar></app-usuario-buscar>
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
   <!--- Note that these columns can be defined in any order.
@@ -11,7 +10,7 @@
   <!-- Position Column -->
   <ng-container matColumnDef="id">
     <th mat-header-cell *matHeaderCellDef> Id </th>
-    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.idUsuario}} </td>
   </ng-container>
 
   <!-- Name Column -->
@@ -47,20 +46,34 @@
   
   <ng-container matColumnDef="categoria">
   <th mat-header-cell *matHeaderCellDef> Categoria </th>
-    <td mat-cell *matCellDef="let element"> {{element.categoria.id}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.categoria.nombreCategoria}} </td>
   </ng-container>
   <!-- Position Column -->
   <ng-container matColumnDef="suscripcion">
     <th mat-header-cell *matHeaderCellDef> Suscripcion </th>
-    <td mat-cell *matCellDef="let element"> {{element.suscripcion.id}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.suscripcion.nombreSuscripcion}} </td>
   </ng-container>
 
   <ng-container matColumnDef="role">
     <th mat-header-cell *matHeaderCellDef> Rol </th>
-    <td mat-cell *matCellDef="let element"> {{element.role.id}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.role.nombreRole}} </td>
   </ng-container>
+
+  <ng-container matColumnDef="acciones">
+    <th mat-header-cell *matHeaderCellDef> Acciones </th>
+    <td mat-cell *matCellDef="let element"> 
+      <button mat-raised-button color="basic"
+            [routerLink]="['edicion', element.idUsuario]">Actualizar</button>
+        <button mat-raised-button color="warn" (click)="confirmar(element.idUsuario)">Eliminar</button>
+    </td>
+</ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
+
+<button mat-mini-fab color="warn" aria-label="Example icon button with a plus one icon"
+    routerLink="/usuario/nuevo">
+    <mat-icon>plus_one</mat-icon>
+</button>
 </div>

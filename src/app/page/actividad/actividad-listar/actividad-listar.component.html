@@ -1,40 +1,57 @@
 <div class ="container">
-  <br><br><br><br>
-  <h1 >Actividad</h1>
-  <br>
-  <br><br>
-<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <h1 >ACTIVIDAD</h1>
 
-    <!--- Note that these columns can be defined in any order.
-            The actual rendered columns are set as a property on the row definition" -->
-  
+  <app-actividad-buscar></app-actividad-buscar>
+  <table mat-table [dataSource]= "dataSource" class="mat-elevation-z8">
+
     <!-- Position Column -->
     <ng-container matColumnDef="id">
       <th mat-header-cell *matHeaderCellDef> Id </th>
-      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+      <td mat-cell *matCellDef= "let element"> {{element.idActividad}} </td>
     </ng-container>
-  
+
     <!-- Name Column -->
     <ng-container matColumnDef="nombre">
       <th mat-header-cell *matHeaderCellDef> Nombre </th>
-      <td mat-cell *matCellDef="let element"> {{element.nombreActvidad}} </td>
+      <td mat-cell *matCellDef= "let element"> {{element.nombreActividad}} </td>
     </ng-container>
-  
+
     <!-- Weight Column -->
     <ng-container matColumnDef="descripcion">
         <th mat-header-cell *matHeaderCellDef> Descripcion </th>
-        <td mat-cell *matCellDef="let element"> {{element.descripcionActividad}} </td>
+        <td mat-cell *matCellDef= "let element"> {{element.descripcionActividad}} </td>
       </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="duracion">
+      <th mat-header-cell *matHeaderCellDef> Duracion </th>
+      <td mat-cell *matCellDef= "let element"> {{element.duracionActividad+" min"}} </td>
+    </ng-container>
+
     <ng-container matColumnDef="usuario">
       <th mat-header-cell *matHeaderCellDef> Usuario </th>
-      <td mat-cell *matCellDef="let element"> {{element.usuario.id}} </td>
+      <td mat-cell *matCellDef= "let element"> {{element.usuario.nombreUsuario}} </td>
     </ng-container>
     <ng-container matColumnDef="tipo">
-      <th mat-header-cell *matHeaderCellDef> Tipo </th>
-      <td mat-cell *matCellDef="let element"> {{element.tipoActividad.id}} </td>
+      <th mat-header-cell *matHeaderCellDef> Tipo de Actividad </th>
+      <td mat-cell *matCellDef= "let element"> {{element.tipoActividad.nombreTipoActividad}} </td>
     </ng-container>
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+    <ng-container matColumnDef="acciones">
+      <th mat-header-cell *matHeaderCellDef> Acciones </th>
+      <td mat-cell *matCellDef= "let element">
+        <button mat-raised-button color="success"
+              [routerLink]= "['edicion', element.idActividad]">Actualizar</button>
+        <button mat-raised-button color="success2" (click)="confirmar(element.idActividad)">Eliminar</button>
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef= "displayedColumns"></tr>
+    <tr mat-row *matRowDef= "let row; columns: displayedColumns;"></tr>
   </table>
 
+
+  <button mat-mini-fab color="success" aria-label="Example icon button with a plus one icon"
+    routerLink="/actividad/nuevo">
+    <mat-icon>plus_one</mat-icon>
+  </button>
 </div>
