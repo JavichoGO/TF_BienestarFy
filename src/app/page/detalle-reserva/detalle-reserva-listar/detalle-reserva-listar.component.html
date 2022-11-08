@@ -1,8 +1,7 @@
 <div class ="container">
-    <br><br><br><br>
-    <h1 >Actividad</h1>
-    <br>
-    <br><br>
+  <h1 >DETALLE RESERVA</h1>
+
+  <app-reserva-buscar></app-reserva-buscar>
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
   
       <!--- Note that these columns can be defined in any order.
@@ -13,7 +12,10 @@
         <th mat-header-cell *matHeaderCellDef> Id </th>
         <td mat-cell *matCellDef="let element"> {{element.idDetalleReserva}} </td>
       </ng-container>
-
+      <ng-container matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDef> Nombre </th>
+        <td mat-cell *matCellDef="let element"> {{element.nombreDetalleReserva}} </td>
+      </ng-container>
       <!-- Weight Column -->
       <ng-container matColumnDef="descripcion">
           <th mat-header-cell *matHeaderCellDef> Descripcion </th>
@@ -25,10 +27,26 @@
       </ng-container>
       <ng-container matColumnDef="actividad">
         <th mat-header-cell *matHeaderCellDef> Actividad </th>
-        <td mat-cell *matCellDef="let element"> {{element.tipoActividad.idActividad}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.actividad.nombreactividad}} </td>
       </ng-container>
+ 
+      <ng-container matColumnDef="acciones">
+        <th mat-header-cell *matHeaderCellDef> Acciones </th>
+        <td mat-cell *matCellDef="let element"> 
+          <button mat-raised-button color="success"
+            [routerLink]="['edicion', element?.idDetalleReserva]">Actualizar</button>
+          <button mat-raised-button color="success2" (click)="confirmar(element.idDetalleReserva)">Eliminar</button>
+        </td>
+      </ng-container>
+  
+  
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
   
-  </div>
+    <div class="example-button-container">
+      <button mat-mini-fab color="success" aria-label="Example icon button with a plus one icon"
+        routerLink="/detallereserva/nuevo">
+        <mat-icon>plus_one</mat-icon>
+      </button>
+    </div>

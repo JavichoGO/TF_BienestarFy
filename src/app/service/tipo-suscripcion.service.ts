@@ -2,11 +2,12 @@ import { HttpClient } from '@angular/common/http';
 import { TipoSuscripcion } from './../model/tipo-suscripcion';
 import { Injectable } from '@angular/core';
 import { Subject , EMPTY} from 'rxjs';
+import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
 export class TipoSuscripcionService {
-  url: string = "http://localhost:5100/tiposuscripcion"
+  private url: string = `${environment.host}/tiposuscripcion`
   private listaCambio = new Subject<TipoSuscripcion[]>()
   private confirmaEliminacion = new Subject<Boolean>()
   constructor(private http: HttpClient) { }

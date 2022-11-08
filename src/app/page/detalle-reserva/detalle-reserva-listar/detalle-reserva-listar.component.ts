@@ -1,9 +1,9 @@
+import { DetalleReservaDialogoComponent } from './detalle-reserva-dialogo/detalle-reserva-dialogo.component';
 import { DetalleReservaService } from './../../../service/detalle-reserva.service';
 import { DetalleReserva } from './../../../model/detalle-reserva';
-import { Reserva } from './../../../model/reserva';
-import { Actividad } from './../../../model/actividad';
 import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-detalle-reserva-listar',
@@ -12,12 +12,35 @@ import { MatTableDataSource } from '@angular/material/table';
 })
 export class DetalleReservaListarComponent implements OnInit {
   dataSource: MatTableDataSource<DetalleReserva> = new MatTableDataSource();
-  displayedColumns:string[]=['id','descripcion','reserva','actividad']
+  displayedColumns: string[] = ['id','nombre', 'descripcion','reserva','actividad','acciones'];
+  private idMayor: number = 0;
   
-  constructor(private drs: DetalleReservaService) { }
+  constructor(private drS: DetalleReservaService, private dialog: MatDialog) { }
+
   ngOnInit(): void {
-    this.drs.listar().subscribe(d => {
-      this.dataSource = new MatTableDataSource(d);
+    this.drS.listar().subscribe(data => {
+      this.dataSource = new MatTableDataSource(data);
     })
-  }
+      this.drS.getLista().subscribe(data => {
+        this.dataSource = new MatTableDataSource(data);
+      });
+      this.drS.getConfirmaEliminacion().subscribe(data => {
+        data == true ? this.eliminar(this.idMayor) : false;
+      });
+
+    }
+    confirmar(idDetalleReserva: number) {
+      this.idMayor = idDetalleReserva;
+      this.dialog.open(DetalleReservaDialogoComponent);
+    }
+  
+  
+    eliminar(idDetalleReserva: number) {
+      this.drS.eliminar(idDetalleReserva).subscribe(() => {
+        this.drS.listar().subscribe(data => {
+          this.drS.setLista(data);/* se ejecuta la línea 27*/
+        });
+      });
+  
+    }
 }

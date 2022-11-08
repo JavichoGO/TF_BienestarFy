@@ -2,12 +2,13 @@ import { Usuario } from './../model/usuario';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Subject, EMPTY } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsuarioService {
-  url: string = "http://localhost:5100/usuario"
+  private url: string = `${environment.host}/usuario`
 
   private listaCambio = new Subject<Usuario[]>()
   private confirmaEliminacion = new Subject<Boolean>()

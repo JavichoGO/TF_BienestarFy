@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Horario } from '../model/horario';
 import { Subject, EMPTY } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HorarioService {
-url:string="http://localhost:5100/horario"
+  private url: string = `${environment.host}/horario`
 
 private listaCambio = new Subject<Horario[]>()
 private confirmaEliminacion = new Subject<Boolean>()

@@ -1,7 +1,7 @@
 <div class="container">
-  <br><br><br><br>
-  <h1>Tipo de Suscripcion</h1>
-  
+  <h1 >TIPO DE SUSCRIPCION</h1>
+
+
   <app-tipo-suscripcion-buscar></app-tipo-suscripcion-buscar>
 
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
@@ -17,7 +17,8 @@
 
     <ng-container matColumnDef="descripcion">
       <th mat-header-cell *matHeaderCellDef>Descripcion</th>
-      <td mat-cell *matCellDef="let element">{{ element.descripcionTipoSucripcion }}</td>
+      <td mat-cell *matCellDef="let element">{{ element.descripcionTipoSuscripcion }}</td>
+
     </ng-container>
 
     <ng-container matColumnDef="descuento">

@@ -22,7 +22,7 @@ export class TipoSuscripcionCreaeditaComponent implements OnInit {
     });
   }
   aceptar(): void {
-    if (this.tiposuscripcion.nombreTipoSuscripcion.length > 0 && this.tiposuscripcion.descripcionTipoSucripcion.length >0) {
+    if (this.tiposuscripcion.nombreTipoSuscripcion.length > 0 && this.tiposuscripcion.descripcionTipoSuscripcion.length >0) {
       if (this.edicion) {
         this.tiposuscripcionService.modificar(this.tiposuscripcion).subscribe(data => {
           this.tiposuscripcionService.listar().subscribe(data => {
