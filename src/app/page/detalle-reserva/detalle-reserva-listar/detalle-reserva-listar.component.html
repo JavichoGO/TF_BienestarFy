@@ -1,0 +1,52 @@
+<div class ="container">
+  <h1 >DETALLE RESERVA</h1>
+
+  <app-detalle-reserva-buscar></app-detalle-reserva-buscar>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  
+      <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+    
+      <!-- Position Column -->
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> Id </th>
+        <td mat-cell *matCellDef="let element"> {{element.idDetalleReserva}} </td>
+      </ng-container>
+      <ng-container matColumnDef="nombre">
+        <th mat-header-cell *matHeaderCellDef> Nombre </th>
+        <td mat-cell *matCellDef="let element"> {{element.nombreDetalleReserva}} </td>
+      </ng-container>
+      <!-- Weight Column -->
+      <ng-container matColumnDef="descripcion">
+          <th mat-header-cell *matHeaderCellDef> Descripcion </th>
+          <td mat-cell *matCellDef="let element"> {{element.descripcionDetalleReserva}} </td>
+        </ng-container>
+      <ng-container matColumnDef="reserva">
+        <th mat-header-cell *matHeaderCellDef> Reserva </th>
+        <td mat-cell *matCellDef="let element"> {{element.reserva.nombreReserva}} </td>
+      </ng-container>
+      <ng-container matColumnDef="actividad">
+        <th mat-header-cell *matHeaderCellDef> Actividad </th>
+        <td mat-cell *matCellDef="let element"> {{element.actividad.nombreActividad}} </td>
+      </ng-container>
+ 
+      <ng-container matColumnDef="acciones">
+        <th mat-header-cell *matHeaderCellDef> Acciones </th>
+        <td mat-cell *matCellDef="let element"> 
+          <button mat-raised-button color="success"
+            [routerLink]="['edicion', element?.idDetalleReserva]">Actualizar</button>
+          <button mat-raised-button color="success2" (click)="confirmar(element.idDetalleReserva)">Eliminar</button>
+        </td>
+      </ng-container>
+  
+  
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  
+    <div class="example-button-container">
+      <button mat-mini-fab color="success" aria-label="Example icon button with a plus one icon"
+        routerLink="/detallereserva/nuevo">
+        <mat-icon>plus_one</mat-icon>
+      </button>
+    </div>
