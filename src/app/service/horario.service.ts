@@ -14,7 +14,6 @@ private listaCambio = new Subject<Horario[]>()
 private confirmaEliminacion = new Subject<Boolean>()
 
   constructor( private http:HttpClient) { }
- 
   listar() {
     return this.http.get<Horario[]>(this.url);
   }
@@ -22,11 +21,28 @@ private confirmaEliminacion = new Subject<Boolean>()
     return this.http.post(this.url, horario);
 
   }
+  setLista(listaNueva: Horario[]) {
+    this.listaCambio.next(listaNueva);
+  }
+
+  getLista() {
+    return this.listaCambio.asObservable();
+  }
+
   modificar(horario: Horario) {
     return this.http.put(this.url, horario);
   }
+  listarId(idHorario: number) {
+    return this.http.get<Horario>(`${this.url}/${idHorario}`);
+  }
   eliminar(idHorario: number) {
     return this.http.delete(this.url + "/" + idHorario);
+  }
+  getConfirmaEliminacion() {
+    return this.confirmaEliminacion.asObservable();
+  }
+  setConfirmaEliminacion(estado: Boolean) {
+    this.confirmaEliminacion.next(estado);
   }
   buscar(texto: string) {
     if (texto.length != 0) {
@@ -34,25 +50,6 @@ private confirmaEliminacion = new Subject<Boolean>()
       });
     }
     return EMPTY;
-  }
-
-  listarId(idHorario: number) {
-    return this.http.get<Horario>(`${this.url}/${idHorario}`);
-  }
-
-  getLista() {
-    return this.listaCambio.asObservable();
-  }
-
-  setLista(listaNueva: Horario[]) {
-    this.listaCambio.next(listaNueva);
-  }
-
-  getConfirmaEliminacion() {
-    return this.confirmaEliminacion.asObservable();
-  }
-  setConfirmaEliminacion(estado: Boolean) {
-    this.confirmaEliminacion.next(estado);
   }
 
 
