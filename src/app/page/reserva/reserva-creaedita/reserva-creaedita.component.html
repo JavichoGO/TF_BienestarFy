@@ -13,17 +13,24 @@
           <input matInput required placeholder="nombre" [(ngModel)]= "reserva.nombreReserva">
   
         </mat-form-field>
-  
-        <br>
-        <mat-form-field class="example-full-width">
+
+
+        <!-- <br>
+        <label class="example-full-width">
           <mat-label>Fecha</mat-label>
-          <input matInput required placeholder="fecha" [(ngModel)]= "reserva.fechaReserva">
-        </mat-form-field>
+           <p>{{currentDate | date: 'dd-MM-YYYY : HH:mm'}}</p>
+        </label> -->
+        <br> 
   
-  
-        <br>
-  
-  
+        <mat-form-field appearance="fill">
+          <mat-label>Fecha </mat-label>
+          <input matInput [matDatepicker]="picker" [(ngModel)]="fecha" [max]="maxFecha" [min]="minFecha">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <br>
+
+
         <mat-form-field appearance="fill">
             <mat-label>Seleccione Usuario</mat-label>
             <mat-select [(value)]="idUsuarioSeleccionado" required>
@@ -35,7 +42,7 @@
         <mat-form-field appearance="fill">
           <mat-label>Seleccione Horario</mat-label>
           <mat-select [(value)]="idHorarioSeleccionado" required>
-              <mat-option *ngFor="let a of listaHorarios" [value]="a.idHorario"> {{a.nombreHorario}}</mat-option>
+              <mat-option *ngFor="let a of listaHorarios" [value]="a.idHorario"> {{a.fechaHorario}}</mat-option>
           </mat-select>
       </mat-form-field>
       <br>

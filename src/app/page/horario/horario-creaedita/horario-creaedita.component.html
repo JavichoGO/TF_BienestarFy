@@ -1,7 +1,5 @@
 <div class="container">
-    <br><br><br><br>
-    <h1 >Añadir Horario</h1>
-    <br>
+  <h1 >AÑADIR HORARIO</h1>
         <mat-form-field class="example-full-width">
           <mat-label>Id</mat-label>
           <input matInput placeholder="id" [(ngModel)]="horario.idHorario">
@@ -24,20 +22,15 @@
               
         <br>
       
-        <mat-form-field class="example-full-width">
+
+
+        <mat-form-field appearance="fill">
           <mat-label>Fecha</mat-label>
-          <input matInput required placeholder="fecha" [(ngModel)]="horario.fechaHorario">
-      
-        </mat-form-field>
-              
-        <br>
-      
-        <mat-form-field class="example-full-width">
-          <mat-label>Hora</mat-label>
-          <input matInput required placeholder="hora" [(ngModel)]="horario.horaHorario">
-      
-        </mat-form-field>
-      
+          <input matInput [matDatepicker]="picker" [(ngModel)]="fechaSeleccionada" [max]="maxFecha" [min]="minFecha">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
         <br>
 
         <br>

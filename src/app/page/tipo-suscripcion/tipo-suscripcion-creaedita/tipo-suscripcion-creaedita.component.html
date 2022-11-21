@@ -1,8 +1,6 @@
 <div class ="container">
-  <br><br><br><br>
-  <h1 >Añadir Tipo de Suscripcion</h1>
-  <br>
-  <br><br>
+  <h1 >AÑADIR TIPO DE SUSCRIPCION</h1>
+ 
     <mat-form-field class="example-full-width">
       <mat-label>Id</mat-label>
       <input matInput placeholder="id" [(ngModel)]="tipoSuscripcion.idTipoSuscripcion">
@@ -27,6 +25,7 @@
       <mat-label>Descuento</mat-label>
       <input matInput required placeholder="descuento" [(ngModel)]="tipoSuscripcion.descuentoTipoSuscripcion">
     </mat-form-field>
+    <br>
   
     <br>
     <button mat-raised-button color="success" (click)="aceptar()">Aceptar</button>

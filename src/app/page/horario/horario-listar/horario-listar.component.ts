@@ -13,7 +13,7 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class HorarioListarComponent implements OnInit {
   dataSource: MatTableDataSource<Horario> = new MatTableDataSource();
-  displayedColumns:string[]=['id','nombre','descripcion','fecha','hora','usuario','tipo','acciones'];
+  displayedColumns:string[]=['id','nombre','descripcion','fecha','usuario','tipo','acciones'];
   private idMayor: number = 0;
   constructor(private hs: HorarioService,private dialog: MatDialog) { }
 
