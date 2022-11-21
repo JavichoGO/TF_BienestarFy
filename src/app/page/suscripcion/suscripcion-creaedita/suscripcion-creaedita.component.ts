@@ -6,6 +6,7 @@ import { Usuario } from 'src/app/model/usuario';
 import { Suscripcion } from 'src/app/model/suscripcion';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { UsuarioService } from 'src/app/service/usuario.service';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-suscripcion-creaedita',
@@ -15,10 +16,17 @@ import { UsuarioService } from 'src/app/service/usuario.service';
 export class SuscripcionCreaeditaComponent implements OnInit {
 
   suscripcion: Suscripcion = new Suscripcion();
+  tipoSuscripcion: TipoSuscripcion = new TipoSuscripcion();
   id:number=0;
   edicion: boolean = false;
   mensaje: string = "";
   mensaje1: string = "";
+  fechainicio: Date = new Date;
+  fechafin: Date = new Date;
+
+
+  minFecha: Date = moment().add(0, 'days').toDate();
+  maxFecha: Date = moment().add(2, 'years').toDate();
   listaTipoSuscripcion: TipoSuscripcion[] = [];
   idTipoSuscripcionSeleccionado: number = 0;
 
@@ -40,8 +48,12 @@ export class SuscripcionCreaeditaComponent implements OnInit {
       if (this.suscripcion.nombreSuscripcion.length > 0 ) {
         let p = new TipoSuscripcion();
         p.idTipoSuscripcion = this.idTipoSuscripcionSeleccionado;
+       
         this.suscripcion.tipoSuscripcion = p;
 
+        this.suscripcion.fechaInicio = moment (this.fechainicio).format('DD-MM-YYYY');
+        this.suscripcion.fechaFin = moment (this.fechafin).format('DD-MM-YYYY');
+        
 
         if (this.edicion) {
           this.sS.modificar(this.suscripcion).subscribe(() => {

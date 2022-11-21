@@ -7,6 +7,7 @@ button {
   margin: 16px;
   object-position: center;
   font-size: 15px;
+  text-align: center;
 }
 .mat-success2 {
   color: #fff;
@@ -14,5 +15,5 @@ button {
 }
 .mat-success {
   color: #fff;
-  background-color:#5cd2fa;
+  background-color:#5cd2fa ;
 }

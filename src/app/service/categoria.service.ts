@@ -31,11 +31,11 @@ export class CategoriaService {
   modificar(categoria: Categoria) {
     return this.http.put(this.url, categoria);
   }
-  listarId(idCategoria: number) {
-    return this.http.get<Categoria>(`${this.url}/${idCategoria}`);
+  listarId(id: number) {
+    return this.http.get<Categoria>(`${this.url}/${id}`);
   }
-  eliminar(idCategoria: number) {
-    return this.http.delete(this.url + "/" + idCategoria);
+  eliminar(id: number) {
+    return this.http.delete(this.url + "/" + id);
   }
   getConfirmaEliminacion() {
     return this.confirmaEliminacion.asObservable();
