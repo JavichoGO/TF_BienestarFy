@@ -20,23 +20,28 @@
           <input matInput required placeholder="precio" [(ngModel)]= "suscripcion.precioSuscripcion">
         </mat-form-field>
   
-  
+<!--   
+        <br>
+        <mat-form-field appearance="fill">
+            <mat-label>Duracion</mat-label>
+            <input matInput [matDatepicker]="picker" [(ngModel)]="fechaSeleccionada" >
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field> -->
+
         <br>
   
-        <mat-form-field class="example-full-width">
-          <mat-label>FechaInicio</mat-label>
-          <input matInput required placeholder="fechainicio" [(ngModel)]= "suscripcion.fechaInicio">
-  
+        <mat-form-field appearance="fill">
+          <mat-label>Duración</mat-label>
+          <mat-date-range-input [rangePicker]="picker">
+            <input matStartDate [(ngModel)]="fechainicio"[min]="minFecha"[max]="maxFecha">
+            <input matEndDate [(ngModel)]="fechafin" >
+          </mat-date-range-input>
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-date-range-picker #picker></mat-date-range-picker>
         </mat-form-field>
-  
-        <br>
-  
-        <mat-form-field class="example-full-width">
-          <mat-label>FechaFin</mat-label>
-          <input matInput required placeholder="fechafin" [(ngModel)]= "suscripcion.fechaFin">
-  
-        </mat-form-field>
-  
+        
+
         <br>
   
   

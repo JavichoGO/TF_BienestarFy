@@ -6,7 +6,6 @@ export class Horario {
     nombreHorario: string = "";
     descripcionHorario: string = "";
     fechaHorario: string="";
-    horaHorario: string="";
     usuario:Usuario = new Usuario();
     tipoHorario:TipoHorario=new TipoHorario();
     

@@ -1,15 +1,14 @@
+
 import { HorarioService } from 'src/app/service/horario.service';
 import { Reserva } from './../../../model/reserva';
-import { TipoActividadService } from 'src/app/service/tipo-actividad.service';
 import { UsuarioService } from './../../../service/usuario.service';
-import { ActividadService } from './../../../service/actividad.service';
-import { TipoActividad } from 'src/app/model/tipo-actividad';
 import { Usuario } from './../../../model/usuario';
-import { Actividad } from './../../../model/actividad';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Horario } from 'src/app/model/horario';
 import { ReservaService } from 'src/app/service/reserva.service';
+import * as moment from 'moment';
+
 
 @Component({
   selector: 'app-reserva-creaedita',
@@ -27,7 +26,10 @@ listaUsuarios: Usuario[] = [];
 listaHorarios: Horario[] = [];
 idHorarioSeleccionado: number = 0;
 idUsuarioSeleccionado: number = 0;
-
+currentDate = new Date();
+fecha: Date = moment().add(0, 'days').toDate();
+maxFecha: Date = moment().add(0, 'days').toDate();
+minFecha: Date = moment().add(0, 'days').toDate();
 
 constructor(private rS: ReservaService,
   private route: ActivatedRoute,
@@ -43,6 +45,8 @@ constructor(private rS: ReservaService,
     });
     this.uS.listar().subscribe(data => { this.listaUsuarios = data });
     this.hS.listar().subscribe(data => { this.listaHorarios = data });
+ 
+    
   }
 
   aceptar() {
@@ -55,6 +59,10 @@ constructor(private rS: ReservaService,
       let a = new Horario();
       a.idHorario = this.idHorarioSeleccionado;
       this.reserva.horario = a;
+
+      this.reserva.fechaReserva = moment(this.fecha).format('DD-MM-YYYY : HH:mm');
+      
+      
 
       if (this.edicion) {
         this.rS.modificar(this.reserva).subscribe(() => {
