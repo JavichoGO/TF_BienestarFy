@@ -1,4 +1,4 @@
-p {
+.p {
   font-size: 17px;
   text-align: center;
 }
@@ -9,11 +9,30 @@ button {
   font-size: 15px;
   text-align: center;
 }
-.mat-success2 {
+
+.success2 {
   color: #fff;
-  background-color: #f9516b;
+  background-color:#f9516b ;
+  border: none;
+  width: 64px;
+  height: 36px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  box-shadow: 1px 1px rgba(0,0,0,0.5);
+  font-size: 15px;
+  font-family: sans-serif;
 }
-.mat-success {
+.success {
   color: #fff;
   background-color:#5cd2fa ;
+  border: none;
+  width: 64px;
+  height: 36px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  box-shadow: 1.5px 1.5px rgba(0,0,0,0.5);
+  font-size: 15px;
+  font-family: sans-serif;
+
+
 }

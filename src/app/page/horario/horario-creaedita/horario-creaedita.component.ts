@@ -1,3 +1,4 @@
+import { Actividad } from './../../../model/actividad';
 import { HorarioService } from 'src/app/service/horario.service';
 import { Horario } from 'src/app/model/horario';
 import { TipoHorarioService } from 'src/app/service/tipo-horario.service';
@@ -7,6 +8,8 @@ import { Usuario } from 'src/app/model/usuario';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 
+import * as moment from 'moment';
+
 @Component({
   selector: 'app-horario-creaedita',
   templateUrl: './horario-creaedita.component.html',
@@ -15,12 +18,18 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 export class HorarioCreaeditaComponent implements OnInit {
 
   horario: Horario = new Horario();
+  actividad: Actividad = new Actividad();
   idHorario: number = 0;
+  idActividad: number = 1;
   edicion: boolean = false;
   mensaje: string = "";
   mensaje1: string = "";
   listaUsuarios: Usuario[] = [];
   listaTipoHorarios: TipoHorario[] = [];
+
+  fechaSeleccionada: Date = moment().add(1, 'days').toDate();
+  maxFecha: Date = moment().add(15, 'days').toDate();
+  minFecha: Date = moment().add(0, 'days').toDate();
  
 
   idUsuarioSeleccionado: number = 0;
@@ -58,6 +67,7 @@ export class HorarioCreaeditaComponent implements OnInit {
       q.idTipoHorario = this.idTipoHorarioSeleccionado;
       this.horario.tipoHorario = q;
 
+      this.horario.fechaHorario = moment(this.fechaSeleccionada).format('DD-MM-YYYY');
 
       if (this.edicion) {
         this.hS.modificar(this.horario).subscribe(() => {

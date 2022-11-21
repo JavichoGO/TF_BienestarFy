@@ -94,6 +94,11 @@ const routes: Routes = [
       { path: 'edicion/:id', component: DetalleReservaCreaeditaComponent }
     ]
   },
+  {
+    path:'',component:UsuarioComponent,children:[
+
+    ]
+  },
 ];
 
 @NgModule({
