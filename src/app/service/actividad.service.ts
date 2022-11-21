@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { EMPTY, Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { RespuestaUsuario } from '../model/respuestausuario';
 
 @Injectable({
   providedIn: 'root'
@@ -52,6 +53,10 @@ export class ActividadService {
   }
   setConfirmaEliminacion(estado: Boolean) {
     this.confirmaEliminacion.next(estado);
+  }
+
+  buscarcantidadactividades() {
+    return this.http.get<RespuestaUsuario[]>(`${this.url}/cantidadactividad`);
   }
 
 }

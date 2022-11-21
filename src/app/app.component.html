@@ -25,16 +25,16 @@
 
     <a [matMenuTriggerFor]="reporte">REPORTES</a>
     <mat-menu #reporte="matMenu">
-      <button mat-menu-item [matMenuTriggerFor]="arturo">Arturo</button>
+      <button mat-menu-item [matMenuTriggerFor]="roberto">Roberto</button>
       <button mat-menu-item [matMenuTriggerFor]="fabrizio">Fabrizio</button>
       <button mat-menu-item [matMenuTriggerFor]="francesco">Francesco</button>
       <button mat-menu-item [matMenuTriggerFor]="javier">Javier</button>
       <button mat-menu-item [matMenuTriggerFor]="nicolas">Nicolas</button>
     </mat-menu>
 
-    <mat-menu #arturo="matMenu">
-      <button mat-menu-item routerLink="/actividad">Reporte Arturo 1</button>
-      <button mat-menu-item routerLink="/tipoactividad">Reporte Arturo 2</button>
+    <mat-menu #roberto="matMenu">
+      <button mat-menu-item routerLink="/actividad/cantidadactividad">Actividades realizadas por usuario</button>
+      <button mat-menu-item routerLink="/usuario/cantidadusuario">Usuarios por Suscripcion</button>
     </mat-menu>
     <mat-menu #fabrizio="matMenu">
       <button mat-menu-item routerLink="/actividad">Reporte fabrizio 1</button>
@@ -49,8 +49,8 @@
       <button mat-menu-item routerLink="/tipoactividad">Reporte javier 2</button>
     </mat-menu>
     <mat-menu #nicolas="matMenu">
-      <button mat-menu-item routerLink="/actividad">Reporte nicolas 1</button>
-      <button mat-menu-item routerLink="/tipoactividad">Reporte nicolas 2</button>
+      <button mat-menu-item routerLink="/tiposuscripcion/descuento">Mayor Descuento por Tipo Suscripcion</button>
+      <button mat-menu-item routerLink="/reserva/usuario">Reserva Asignada a Usuario</button>
     </mat-menu>
 
     <a  [matMenuTriggerFor]="actividad">ACTIVIDAD</a>

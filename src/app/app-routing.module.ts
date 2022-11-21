@@ -22,6 +22,10 @@ import { UsuarioCreaeditaComponent } from './page/usuario/usuario-creaedita/usua
 import { ActividadCreaeditaComponent } from './page/actividad/actividad-creaedita/actividad-creaedita.component';
 import { HorarioCreaeditaComponent } from './page/horario/horario-creaedita/horario-creaedita.component';
 import { SuscripcionCreaeditaComponent } from './page/suscripcion/suscripcion-creaedita/suscripcion-creaedita.component';
+import { UsuarioCantidadComponent } from './page/usuario/usuario-cantidad/usuario-cantidad.component';
+import { ActividadCantidadComponent } from './page/actividad/actividad-cantidad/actividad-cantidad.component';
+import { ReservaUsuarioComponent } from './page/reserva/reserva-usuario/reserva-usuario.component';
+import { TipoSuscripcionDescuentoComponent } from './page/tipo-suscripcion/tipo-suscripcion-descuento/tipo-suscripcion-descuento.component';
 
 
 
@@ -42,7 +46,8 @@ const routes: Routes = [
   {
     path:'usuario',component:UsuarioComponent,children:[
       { path: 'nuevo', component: UsuarioCreaeditaComponent },
-      { path: 'edicion/:id', component: UsuarioCreaeditaComponent }
+      { path: 'edicion/:id', component: UsuarioCreaeditaComponent },
+      { path: 'cantidadusuario', component: UsuarioCantidadComponent }
     ]
   },
   {
@@ -54,7 +59,8 @@ const routes: Routes = [
   {
     path:'tiposuscripcion',component:TipoSuscripcionComponent,children:[
       { path: 'nuevo', component: TipoSuscripcionCreaeditaComponent },
-      { path: 'edicion/:id', component: TipoSuscripcionCreaeditaComponent }
+      { path: 'edicion/:id', component: TipoSuscripcionCreaeditaComponent },
+      { path: 'descuento', component: TipoSuscripcionDescuentoComponent }
     ]
   },
   {
@@ -66,7 +72,8 @@ const routes: Routes = [
   {
     path:'actividad',component:ActividadComponent,children:[
       {path: 'nuevo', component:ActividadCreaeditaComponent},
-      {path: 'edicion/:id',component:ActividadCreaeditaComponent}
+      {path: 'edicion/:id',component:ActividadCreaeditaComponent},
+      {path: 'cantidadactividad',component:ActividadCantidadComponent}
       ]
   },
   {
@@ -79,7 +86,8 @@ const routes: Routes = [
   {
     path:'reserva',component:ReservaComponent,children:[
       { path: 'nuevo', component: ReservaCreaeditaComponent },
-      { path: 'edicion/:id', component: ReservaCreaeditaComponent }
+      { path: 'edicion/:id', component: ReservaCreaeditaComponent },
+      {path: 'usuario',component: ReservaUsuarioComponent}
     ]
   },
   {
@@ -91,7 +99,8 @@ const routes: Routes = [
   {
     path:'detallereserva',component:DetalleReservaComponent,children:[
       { path: 'nuevo', component: DetalleReservaCreaeditaComponent },
-      { path: 'edicion/:id', component: DetalleReservaCreaeditaComponent }
+      { path: 'edicion/:id', component: DetalleReservaCreaeditaComponent },
+      {path: 'usuario', component: ReservaUsuarioComponent }
     ]
   },
   {
