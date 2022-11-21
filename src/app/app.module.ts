@@ -1,3 +1,5 @@
+import { ReservaUsuarioComponent } from './page/reserva/reserva-usuario/reserva-usuario.component';
+import { TipoSuscripcionDescuentoComponent } from './page/tipo-suscripcion/tipo-suscripcion-descuento/tipo-suscripcion-descuento.component';
 import { CategoriaCreaEditaComponent } from './page/categoria/categoria-creaedita/categoria-creaedita.component';
 import { TipoActividadListarComponent } from './page/tipo-actividad/tipo-actividad-listar/tipo-actividad-listar.component';
 import { TipoSuscripcionComponent } from './page/tipo-suscripcion/tipo-suscripcion.component';
@@ -74,6 +76,9 @@ import { CustomDateAdapter } from './custom-adapter';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { DatePipe } from '@angular/common';
+import { UsuarioCantidadComponent } from './page/usuario/usuario-cantidad/usuario-cantidad.component';
+import { ActividadCantidadComponent } from './page/actividad/actividad-cantidad/actividad-cantidad.component';
+
 
 
 
@@ -134,6 +139,10 @@ import { DatePipe } from '@angular/common';
     SuscripcionDialogoComponent,
     ReservaBuscarComponent,
     ReservaCreaeditaComponent,
+      UsuarioCantidadComponent,
+    ActividadCantidadComponent,
+    TipoSuscripcionDescuentoComponent,
+    ReservaUsuarioComponent
   
   ],
   imports: [

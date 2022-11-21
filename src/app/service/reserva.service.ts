@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { EMPTY, Subject } from 'rxjs';
+import { ReservaUsuario } from '../model/ReservaUsuario';
 
 @Injectable({
   providedIn: 'root'
@@ -51,6 +52,10 @@ getConfirmaEliminacion() {
 }
 setConfirmaEliminacion(estado: Boolean) {
   this.confirmaEliminacion.next(estado);
+}
+
+buscarRESUS(){
+  return this.http.get<ReservaUsuario[]>(`${this.url}/buscarRESUS`);
 }
 
 }
