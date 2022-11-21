@@ -68,6 +68,13 @@ import { SuscripcionCreaeditaComponent } from './page/suscripcion/suscripcion-cr
 import { SuscripcionDialogoComponent } from './page/suscripcion/suscripcion-listar/suscripcion-dialogo/suscripcion-dialogo.component';
 import { ReservaBuscarComponent } from './page/reserva/reserva-buscar/reserva-buscar.component';
 import { ReservaCreaeditaComponent } from './page/reserva/reserva-creaedita/reserva-creaedita.component';
+import {MatMenuModule} from '@angular/material/menu'
+import { DateAdapter, ErrorStateMatcher, MatNativeDateModule, MAT_DATE_LOCALE, ShowOnDirtyErrorStateMatcher } from '@angular/material/core';
+import { CustomDateAdapter } from './custom-adapter';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import { DatePipe } from '@angular/common';
+
 
 
 @NgModule({
@@ -143,11 +150,20 @@ import { ReservaCreaeditaComponent } from './page/reserva/reserva-creaedita/rese
     MatToolbarModule,
     MatDatepickerModule,
     MatSnackBarModule,
-    MatSelectModule
-
+    MatSelectModule,
+    MatMenuModule,
+    MatNativeDateModule,
+    MatPaginatorModule
   
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [DatePipe,
+    { provide: MAT_DATE_LOCALE, useValue: 'es-ES' },
+    { provide: DateAdapter, useClass: CustomDateAdapter,}  
+    
+  ],
+  bootstrap: [AppComponent],
+  exports: [
+    MatFormFieldModule
+    ] 
 })
 export class AppModule { }

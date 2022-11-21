@@ -21,13 +21,13 @@
     ====<a class=".link" mat-button routerLink="/tiposuscripcion">TIPO SUSCRIPCIÓN</a>
     ====<a class=".link" mat-button routerLink="/usuario">USUARIO</a> -->
 
-    <a class ="right-side"[matMenuTriggerFor]="reporte">REPORTES</a>
+    <a [matMenuTriggerFor]="reporte">REPORTES</a>
     <mat-menu #reporte="matMenu">
       <button mat-menu-item routerLink="/actividad">Reporte 1</button>
       <button mat-menu-item routerLink="/tipoactividad">Reporte 2</button>
     </mat-menu>
 
-    <a class ="right-side" [matMenuTriggerFor]="actividad">ACTIVIDAD</a>
+    <a  [matMenuTriggerFor]="actividad">ACTIVIDAD</a>
     <mat-menu #actividad="matMenu">
       <button mat-menu-item routerLink="/actividad">Actividad</button>
       <button mat-menu-item routerLink="/tipoactividad">Tipo de Actividad</button>

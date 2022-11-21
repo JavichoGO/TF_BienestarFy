@@ -2,8 +2,9 @@ import { MatDialog } from '@angular/material/dialog';
 import { RoleDialogoComponent } from './role-dialogo/role-dialogo.component';
 import { RoleService } from './../../../service/role.service';
 import { Role } from './../../../model/role';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,AfterViewInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
+import {MatPaginator} from '@angular/material/paginator';
 
 
 @Component({
@@ -15,8 +16,9 @@ export class RoleListarComponent implements OnInit {
   dataSource: MatTableDataSource<Role> = new MatTableDataSource();
   displayedColumns: string[] = ['id', 'nombre', 'descripcion', 'acciones']
   private idMayor: number = 0;
-  constructor(private rs: RoleService, private dialog: MatDialog) { }
 
+  constructor(private rs: RoleService, private dialog: MatDialog) { }
+  
   ngOnInit(): void {
     this.rs.listar().subscribe(data => {
       this.dataSource = new MatTableDataSource(data);
