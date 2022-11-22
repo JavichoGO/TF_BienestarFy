@@ -31,6 +31,8 @@ import { ReservaUsuarioComponent } from './page/reserva/reserva-usuario/reserva-
 import { TipoSuscripcionDescuentoComponent } from './page/tipo-suscripcion/tipo-suscripcion-descuento/tipo-suscripcion-descuento.component';
 import { HorarioCantidadComponent } from './page/horario/horario-cantidad/horario-cantidad.component';
 import { ActividadDuracionComponent } from './page/actividad/actividad-duracion/actividad-duracion.component';
+import { UsuarioEdadComponent } from './page/usuario/usuario-edad/usuario-edad.component';
+import { SuscripcionPromedioComponent } from './page/suscripcion/suscripcion-promedio/suscripcion-promedio.component';
 
 
 
@@ -53,7 +55,8 @@ const routes: Routes = [
     path:'usuario',component:UsuarioComponent,children:[
       { path: 'nuevo', component: UsuarioCreaeditaComponent },
       { path: 'edicion/:id', component: UsuarioCreaeditaComponent },
-      { path: 'cantidadusuario', component: UsuarioCantidadComponent }
+      { path: 'cantidadusuario', component: UsuarioCantidadComponent },
+      { path: 'edad', component: UsuarioEdadComponent }
     ]
   },
   {
@@ -73,6 +76,8 @@ const routes: Routes = [
     path:'suscripcion',component:SuscripcionComponent,children:[
       {path: 'nuevo', component:SuscripcionCreaeditaComponent},
       {path: 'edicion/:id', component:SuscripcionCreaeditaComponent},
+      {path: 'promedio', component: SuscripcionPromedioComponent }
+   
     ]
   },
   {
