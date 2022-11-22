@@ -78,6 +78,10 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { DatePipe } from '@angular/common';
 import { UsuarioCantidadComponent } from './page/usuario/usuario-cantidad/usuario-cantidad.component';
 import { ActividadCantidadComponent } from './page/actividad/actividad-cantidad/actividad-cantidad.component';
+import { TipoActividadContadorComponent } from './page/tipo-actividad/tipo-actividad-contador/tipo-actividad-contador.component';
+import { ActividadDuracionComponent } from './page/actividad/actividad-duracion/actividad-duracion.component';
+import { HorarioCantidadComponent } from './page/horario/horario-cantidad/horario-cantidad.component';
+import { CategoriaUsuarioComponent } from './page/categoria/categoria-usuario/categoria-usuario.component';
 
 
 
@@ -142,7 +146,11 @@ import { ActividadCantidadComponent } from './page/actividad/actividad-cantidad/
       UsuarioCantidadComponent,
     ActividadCantidadComponent,
     TipoSuscripcionDescuentoComponent,
-    ReservaUsuarioComponent
+    ReservaUsuarioComponent,
+    TipoActividadContadorComponent,
+    ActividadDuracionComponent,
+    HorarioCantidadComponent,
+    CategoriaUsuarioComponent
   
   ],
   imports: [

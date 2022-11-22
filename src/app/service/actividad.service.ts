@@ -58,5 +58,9 @@ export class ActividadService {
   buscarcantidadactividades() {
     return this.http.get<RespuestaUsuario[]>(`${this.url}/cantidadactividad`);
   }
+  
+  buscarDuracion() {
+    return this.http.get<Actividad[]>(`${this.url}/buscarDuracion`);
+  }
 
 }
