@@ -1,3 +1,5 @@
+import { HorarioCantidadComponent } from './page/horario/horario-cantidad/horario-cantidad.component';
+import { ActividadDuracionComponent } from './page/actividad/actividad-duracion/actividad-duracion.component';
 import { ReservaCreaeditaComponent } from './page/reserva/reserva-creaedita/reserva-creaedita.component';
 import { DetalleReservaCreaeditaComponent } from './page/detalle-reserva/detalle-reserva-creaedita/detalle-reserva-creaedita.component';
 import { DetalleReservaComponent } from './page/detalle-reserva/detalle-reserva.component';
@@ -35,8 +37,9 @@ const routes: Routes = [
   },{
     path:'horario',component:HorarioComponent,children:[
       { path: 'nuevo', component: HorarioCreaeditaComponent },
-      { path: 'edicion/:id', component: HorarioCreaeditaComponent }
-  
+      { path: 'edicion/:id', component: HorarioCreaeditaComponent },
+      { path: 'usuario', component: HorarioCantidadComponent }
+
     ]
   },
   {
@@ -66,7 +69,8 @@ const routes: Routes = [
   {
     path:'actividad',component:ActividadComponent,children:[
       {path: 'nuevo', component:ActividadCreaeditaComponent},
-      {path: 'edicion/:id',component:ActividadCreaeditaComponent}
+      {path: 'edicion/:id',component:ActividadCreaeditaComponent},
+      {path: 'duracion',component:ActividadDuracionComponent}
       ]
   },
   {

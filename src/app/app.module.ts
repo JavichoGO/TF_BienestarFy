@@ -1,3 +1,4 @@
+import { HorarioCantidadComponent } from './page/horario/horario-cantidad/horario-cantidad.component';
 import { CategoriaCreaEditaComponent } from './page/categoria/categoria-creaedita/categoria-creaedita.component';
 import { TipoActividadListarComponent } from './page/tipo-actividad/tipo-actividad-listar/tipo-actividad-listar.component';
 import { TipoSuscripcionComponent } from './page/tipo-suscripcion/tipo-suscripcion.component';
@@ -74,6 +75,8 @@ import { CustomDateAdapter } from './custom-adapter';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { DatePipe } from '@angular/common';
+import { ActividadDuracionComponent } from './page/actividad/actividad-duracion/actividad-duracion.component';
+
 
 
 
@@ -134,7 +137,10 @@ import { DatePipe } from '@angular/common';
     SuscripcionDialogoComponent,
     ReservaBuscarComponent,
     ReservaCreaeditaComponent,
-  
+    ActividadDuracionComponent,
+    HorarioCantidadComponent
+
+
   ],
   imports: [
     BrowserModule,
@@ -154,16 +160,16 @@ import { DatePipe } from '@angular/common';
     MatMenuModule,
     MatNativeDateModule,
     MatPaginatorModule
-  
+
   ],
   providers: [DatePipe,
     { provide: MAT_DATE_LOCALE, useValue: 'es-ES' },
-    { provide: DateAdapter, useClass: CustomDateAdapter,}  
-    
+    { provide: DateAdapter, useClass: CustomDateAdapter,}
+
   ],
   bootstrap: [AppComponent],
   exports: [
     MatFormFieldModule
-    ] 
+    ]
 })
 export class AppModule { }

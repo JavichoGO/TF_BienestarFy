@@ -1,3 +1,4 @@
+import { RespuestaUsuarioHorario } from './../model/respuestausuariohorario';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Horario } from '../model/horario';
@@ -51,6 +52,11 @@ private confirmaEliminacion = new Subject<Boolean>()
     }
     return EMPTY;
   }
+
+  horariousuario() {
+    return this.http.get<RespuestaUsuarioHorario[]>(`${this.url}/horariousuario`);
+  }
+
 
 
 }

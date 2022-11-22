@@ -54,4 +54,8 @@ export class ActividadService {
     this.confirmaEliminacion.next(estado);
   }
 
+  buscarDuracion() {
+    return this.http.get<Actividad[]>(`${this.url}/buscarDuracion`);
+  }
+
 }
