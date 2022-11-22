@@ -46,4 +46,9 @@ export class TipoSuscripcionService {
     return EMPTY;
   }
 
+  buscarDescuento() {
+    return this.http.get<TipoSuscripcion[]>(`${this.url}/buscarDescuento`);
+  }
+
+
 }

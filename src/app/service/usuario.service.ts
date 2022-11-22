@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Subject, EMPTY } from 'rxjs';
 import { environment } from 'src/environments/environment';
+import { RespuestaSuscripcion } from '../model/respuestasuscripcion';
 
 @Injectable({
   providedIn: 'root'
@@ -53,6 +54,9 @@ export class UsuarioService {
   }
   setConfirmaEliminacion(estado: Boolean) {
     this.confirmaEliminacion.next(estado);
+  }
+  buscarcantidadusuarios() {
+    return this.http.get<RespuestaSuscripcion[]>(`${this.url}/cantidadusuario`);
   }
 
 }

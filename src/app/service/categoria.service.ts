@@ -1,3 +1,4 @@
+import { CategoriaUsuario } from './../model/categoriausuario';
 import { environment } from './../../environments/environment';
 import { Subject, EMPTY} from 'rxjs';
 import { HttpClient } from '@angular/common/http';
@@ -49,6 +50,9 @@ export class CategoriaService {
       });
     }
     return EMPTY;
+  }
+  contadorUsuario(){
+    return this.http.get<CategoriaUsuario[]>(`${this.url}/contadorUsuario`);
   }
 
 

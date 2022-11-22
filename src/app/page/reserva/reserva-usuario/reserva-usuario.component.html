@@ -1,0 +1,47 @@
+<div class ="container">
+    <h1 >RESERVA ASIGNADA A USUARIO</h1>
+    <br>   
+    <br>
+  
+    <table mat-table [dataSource]= "dataSource" class="mat-elevation-z8">
+      <!-- Position Column -->
+      <ng-container matColumnDef="nombre_reserva">
+        <th mat-header-cell *matHeaderCellDef> Nombre de la Reserva </th>
+        <td mat-cell *matCellDef= "let element"> {{element.nombre_reserva}} </td>
+      </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="fecha_reserva">
+        <th mat-header-cell *matHeaderCellDef> Fecha de la reserva </th>
+        <td mat-cell *matCellDef= "let element"> {{element.fecha_reserva}} </td>
+      </ng-container>
+  
+      <!-- Weight Column -->
+      <ng-container matColumnDef="nombre_usuario">
+          <th mat-header-cell *matHeaderCellDef> Nombre del Usuario </th>
+          <td mat-cell *matCellDef= "let element"> {{element.nombre_usuario}} </td>
+        </ng-container>
+  
+      <ng-container matColumnDef="apellido_usuario">
+        <th mat-header-cell *matHeaderCellDef> Apellido del Usuario </th>
+        <td mat-cell *matCellDef= "let element"> {{element.apellido_usuario}} </td>
+      </ng-container>
+      <ng-container matColumnDef="correo_usuario">
+        <th mat-header-cell *matHeaderCellDef> Correo del Usuario </th>
+        <td mat-cell *matCellDef= "let element"> {{element.correo_usuario}} </td>
+      </ng-container>
+      <ng-container matColumnDef="telefono_usuario">
+        <th mat-header-cell *matHeaderCellDef> Telefono del Usuario </th>
+        <td mat-cell *matCellDef= "let element"> {{element.telefono_usuario}} </td>
+      </ng-container>
+      
+      
+      <tr mat-header-row *matHeaderRowDef= "displayedColumns"></tr>
+      <tr mat-row *matRowDef= "let row; columns: displayedColumns;"></tr>
+    </table>
+    <!-- <button mat-raised-button color="success2"
+    routerLink="/detallereserva">REGRESAR</button> -->
+  
+    
+  </div>
+  

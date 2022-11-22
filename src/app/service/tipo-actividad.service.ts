@@ -1,3 +1,4 @@
+import { TaDetalleReserva } from './../model/taDetalleReserva';
 import { TipoActividad } from './../model/tipo-actividad';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -54,5 +55,7 @@ private confirmaEliminacion = new Subject<Boolean>()
   setConfirmaEliminacion(estado: Boolean) {
     this.confirmaEliminacion.next(estado);
   }
-
+  contadorTipoActividad(){
+    return this.http.get<TaDetalleReserva[]>(`${this.url}/contadorTipoActividad`);
+  }
 }

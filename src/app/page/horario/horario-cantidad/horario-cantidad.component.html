@@ -1,0 +1,40 @@
+<div class ="container">
+    <h1 >Informacion de Horarios del Psicologo</h1>
+    <br>   
+    <br>
+    <table mat-table [dataSource]= "dataSource" class="mat-elevation-z8">
+  
+  
+      <!-- Weight Column -->
+      <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef> Id </th>
+          <td mat-cell *matCellDef= "let element"> {{element.id}} </td>
+        </ng-container>
+  
+      <!-- Weight Column -->
+      <ng-container matColumnDef="horario">
+        <th mat-header-cell *matHeaderCellDef> Nombre Horario </th>
+        <td mat-cell *matCellDef= "let element"> {{element.horario}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="usuario">
+        <th mat-header-cell *matHeaderCellDef> Nombre Psicologo </th>
+        <td mat-cell *matCellDef= "let element"> {{element.usuario}} </td>
+      </ng-container>
+  
+    <!-- Weight Column -->
+    <ng-container matColumnDef="categoria">
+      <th mat-header-cell *matHeaderCellDef> Categoria Psicologo </th>
+      <td mat-cell *matCellDef= "let element"> {{element.categoria}} </td>
+    </ng-container>
+  
+  
+      <tr mat-header-row *matHeaderRowDef= "displayedColumns"></tr>
+      <tr mat-row *matRowDef= "let row; columns: displayedColumns;"></tr>
+    </table>
+  <br>
+  <br>
+  
+  
+  </div>
+  
