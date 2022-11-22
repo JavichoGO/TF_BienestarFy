@@ -2,13 +2,14 @@ import { TipoActividad } from './../model/tipo-actividad';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Subject, EMPTY } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class TipoActividadService {
-url:string="http://localhost:8086/tipoactividad"
+   url: string = 'http://localhost:8086/tipoactividad'
 
 private listaCambio = new Subject<TipoActividad[]>()
 private confirmaEliminacion = new Subject<Boolean>()
@@ -17,12 +18,12 @@ private confirmaEliminacion = new Subject<Boolean>()
   listar() {
     return this.http.get<TipoActividad[]>(this.url);
   }
-  insertar(tipoactividad: TipoActividad) {
-    return this.http.post(this.url, tipoactividad);
+  insertar(tipoActividad: TipoActividad) {
+    return this.http.post(this.url, tipoActividad);
 
   }
-  modificar(tipoactividad: TipoActividad) {
-    return this.http.put(this.url, tipoactividad);
+  modificar(tipoActividad: TipoActividad) {
+    return this.http.put(this.url, tipoActividad);
   }
   eliminar(id: number) {
     return this.http.delete(this.url + "/" + id);

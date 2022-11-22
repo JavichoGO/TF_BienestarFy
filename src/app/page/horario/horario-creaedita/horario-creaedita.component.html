@@ -1,0 +1,62 @@
+<div class="container">
+  <h1 >AÑADIR HORARIO</h1>
+        <mat-form-field class="example-full-width">
+          <mat-label>Id</mat-label>
+          <input matInput placeholder="id" [(ngModel)]="horario.idHorario">
+        </mat-form-field>
+      
+        <br>
+      
+        <mat-form-field class="example-full-width">
+          <mat-label>Nombre</mat-label>
+          <input matInput required placeholder="nombre" [(ngModel)]="horario.nombreHorario">
+      
+        </mat-form-field>
+      
+        <br>
+        <mat-form-field class="example-full-width">
+          <mat-label>Descripcion</mat-label>
+          <input matInput required placeholder="descripcion" [(ngModel)]="horario.descripcionHorario">
+        </mat-form-field>
+    
+              
+        <br>
+      
+        <mat-form-field class="example-full-width">
+          <mat-label>Fecha</mat-label>
+          <input matInput required placeholder="fecha" [(ngModel)]="horario.fechaHorario">
+      
+        </mat-form-field>
+              
+        <br>
+      
+        <mat-form-field class="example-full-width">
+          <mat-label>Hora</mat-label>
+          <input matInput required placeholder="hora" [(ngModel)]="horario.horaHorario">
+      
+        </mat-form-field>
+      
+        <br>
+
+        <br>
+        <mat-form-field appearance="fill">
+            <mat-label>Seleccione Usuario</mat-label>
+            <mat-select [(value)]="idUsuarioSeleccionado" required>
+                <mat-option *ngFor="let p of listaUsuarios" [value]="p.idUsuario"> {{p.nombreUsuario}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br>
+        <mat-form-field appearance="fill">
+            <mat-label>Seleccione Tipo Horario</mat-label>
+            <mat-select [(value)]="idTipoHorarioSeleccionado" required>
+                <mat-option *ngFor="let q of listaTipoHorarios" [value]="q.idTipoHorario"> {{q.nombreTipoHorario}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+        <br>
+      
+
+        <button mat-raised-button color="success" (click)="aceptar()">Aceptar</button>
+        <button mat-raised-button color="success2" routerLink="/horario">Cancelar</button>
+        <p>{{mensaje}}</p>
+      
+      </div>

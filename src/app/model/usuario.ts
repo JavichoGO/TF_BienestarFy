@@ -1,6 +1,6 @@
 import { Role } from './role';
 import { Suscripcion } from './suscripcion';
-import {Categoria} from './categoria';
+import { Categoria } from './categoria';
 
 
 export class Usuario {
@@ -10,8 +10,8 @@ export class Usuario {
     correoUsuario: string = "";
     contrasenaUsuario: string = "";
     edadUsuario: number = 0;
-    telefonoUsuario: number=0;
-    //categoria:Categoria = new Categoria();
-    //suscripcion:Suscripcion = new Suscripcion();
+    telefonoUsuario: number = 0;
+    categoria: Categoria = new Categoria();
+    suscripcion: Suscripcion = new Suscripcion();
     role: Role = new Role();
 }

@@ -13,7 +13,6 @@ export class UsuarioBuscarComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
   buscar(e: any) {
     let array: Usuario[] = [];
     this.uS.listar().subscribe(data => {

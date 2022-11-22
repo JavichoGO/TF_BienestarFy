@@ -4,10 +4,11 @@
 
 export const environment = {
   production: false,
-  host: "http://localhost:8086"
+  host: "http://localhost:4200"
+ 
 };
 
-/*
+/*SSSS
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
  *

@@ -11,18 +11,16 @@ import { ActivatedRoute, Params, Router } from '@angular/router';
 export class RoleCreaeditaComponent implements OnInit {
 
   role: Role = new Role();
-  id: number = 0;
-  edicion: boolean = false;
   mensaje: string = "";
-
-
+  edicion: boolean = false;
+  idRole: number = 0;
 
   constructor(private roleService: RoleService, private router: Router
     , private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.route.params.subscribe((data: Params) => {
-      this.id = data['id'];
+      this.idRole = data['id'];
       this.edicion = data['id'] != null;
       this.init();
     });
@@ -50,7 +48,7 @@ export class RoleCreaeditaComponent implements OnInit {
   }
   init() {
     if (this.edicion) {
-      this.roleService.listarId(this.id).subscribe(data => {
+      this.roleService.listarId(this.idRole).subscribe(data => {
         this.role = data;
       })
     }

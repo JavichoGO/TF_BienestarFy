@@ -8,7 +8,7 @@ import { EMPTY, Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class SuscripcionService {
-  url:string="http://localhost:8086/suscripcion"
+  url: string = 'http://localhost:8086/suscripcion'
 
   private listaCambio = new Subject<Suscripcion[]>()
   private confirmaEliminacion = new Subject<Boolean>()
@@ -53,3 +53,4 @@ export class SuscripcionService {
     this.confirmaEliminacion.next(estado);
   }
 }
+

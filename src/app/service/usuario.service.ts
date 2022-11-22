@@ -2,55 +2,57 @@ import { Usuario } from './../model/usuario';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Subject, EMPTY } from 'rxjs';
-Usuario
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UsuarioService {
-url:string="http://localhost:8086/usuario"
+   url: string = 'http://localhost:8086/usuario'
 
-private listaCambio = new Subject<Usuario[]>()
-private confirmaEliminacion = new Subject<Boolean>()
-constructor(private http: HttpClient) { }
-listar() {
-  return this.http.get<Usuario[]>(this.url);
-}
-insertar(usuario: Usuario) {
-  return this.http.post(this.url, usuario);
+  private listaCambio = new Subject<Usuario[]>()
+  private confirmaEliminacion = new Subject<Boolean>()
 
-}
-modificar(usuario: Usuario) {
-  return this.http.put(this.url, usuario);
-}
-eliminar(id: number) {
-  return this.http.delete(this.url + "/" + id);
-}
-buscar(texto: string) {
-  if (texto.length != 0) {
-    return this.http.post<Usuario[]>(`${this.url}/buscar`, texto.toLowerCase(), {
-    });
+  constructor(private http: HttpClient) { }
+  
+  listar() {
+    return this.http.get<Usuario[]>(this.url);
   }
-  return EMPTY;
-}
+  insertar(usuario: Usuario) {
+    return this.http.post(this.url, usuario);
 
-listarId(id: number) {
-  return this.http.get<Usuario>(`${this.url}/${id}`);
-}
+  }
+  modificar(usuario: Usuario) {
+    return this.http.put(this.url, usuario);
+  }
+  eliminar(idUsuario: number) {
+    return this.http.delete(this.url + "/" + idUsuario);
+  }
+  buscar(texto: string) {
+    if (texto.length != 0) {
+      return this.http.post<Usuario[]>(`${this.url}/buscar`, texto.toLowerCase(), {
+      });
+    }
+    return EMPTY;
+  }
 
-getLista() {
-  return this.listaCambio.asObservable();
-}
+  listarId(idUsuario: number) {
+    return this.http.get<Usuario>(`${this.url}/${idUsuario}`);
+  }
 
-setLista(listaNueva: Usuario[]) {
-  this.listaCambio.next(listaNueva);
-}
+  getLista() {
+    return this.listaCambio.asObservable();
+  }
 
-getConfirmaEliminacion() {
-  return this.confirmaEliminacion.asObservable();
-}
-setConfirmaEliminacion(estado: Boolean) {
-  this.confirmaEliminacion.next(estado);
-}
+  setLista(listaNueva: Usuario[]) {
+    this.listaCambio.next(listaNueva);
+  }
+
+  getConfirmaEliminacion() {
+    return this.confirmaEliminacion.asObservable();
+  }
+  setConfirmaEliminacion(estado: Boolean) {
+    this.confirmaEliminacion.next(estado);
+  }
 
 }

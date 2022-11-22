@@ -14,10 +14,10 @@ export class UsuarioListarComponent implements OnInit {
 
   dataSource: MatTableDataSource<Usuario> = new MatTableDataSource();
 
-  displayedColumns: string[] = ['id', 'nombre', 'apellido','correo','contrasena','edad','telefono','role', 'acciones'];
-  //Agregar 'categoria','suscripcion' en la lindea de arriba y tmb en el html
+  displayedColumns: string[] = ['id', 'nombre', 'apellido','correo','contrasena','edad','telefono','categoria','suscripcion','role','acciones'];
   private idMayor: number = 0;
-  constructor(private us:UsuarioService, private dialog: MatDialog) { }
+
+  constructor(private us:UsuarioService,private dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.us.listar().subscribe(data => {
@@ -35,15 +35,16 @@ export class UsuarioListarComponent implements OnInit {
       data == true ? this.eliminar(this.idMayor) : false;
     });
   }
-  confirmar(id: number) {
-    this.idMayor = id;
+  confirmar(idUsuario: number) {
+    this.idMayor = idUsuario;
     this.dialog.open(UsuarioDialogoComponent);
   }
-  eliminar(id: number) {
-    this.us.eliminar(id).subscribe(() => {
+  eliminar(idUsuario: number) {
+    this.us.eliminar(idUsuario).subscribe(() => {
       this.us.listar().subscribe(data => {
         this.us.setLista(data);/* se ejecuta la línea 27 */
       });
     });
   }
 }
+ 

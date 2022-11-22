@@ -3,8 +3,8 @@ export class Suscripcion {
     idSuscripcion: number=0;
     nombreSuscripcion:string="";
     precioSuscripcion:number=0;
-    fechaInicioSuscripcion:string="";
-    fechaFinSuscripcion:string="";
+    fechaInicio:string="";
+    fechaFin:string="";
     tipoSuscripcion:TipoSuscripcion=new TipoSuscripcion();
    
 }

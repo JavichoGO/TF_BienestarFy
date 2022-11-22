@@ -2,19 +2,20 @@ import { HttpClient } from '@angular/common/http';
 import { TipoSuscripcion } from './../model/tipo-suscripcion';
 import { Injectable } from '@angular/core';
 import { Subject , EMPTY} from 'rxjs';
+import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
 export class TipoSuscripcionService {
-  url: string = "http://localhost:8086/tiposuscripcion"
+   url: string = 'http://localhost:8086/tiposuscripcion'
   private listaCambio = new Subject<TipoSuscripcion[]>()
   private confirmaEliminacion = new Subject<Boolean>()
   constructor(private http: HttpClient) { }
   listar() {
     return this.http.get<TipoSuscripcion[]>(this.url);
   }
-  insertar(tiposuscripcion: TipoSuscripcion) {
-    return this.http.post(this.url, tiposuscripcion);
+  insertar(tipoSuscripcion: TipoSuscripcion) {
+    return this.http.post(this.url, tipoSuscripcion);
   }
   setLista(listaNueva: TipoSuscripcion[]) {
     this.listaCambio.next(listaNueva);
@@ -22,14 +23,14 @@ export class TipoSuscripcionService {
   getLista() {
     return this.listaCambio.asObservable();
   }
-  modificar(tiposuscripcion: TipoSuscripcion) {
-    return this.http.put(this.url + "/" + tiposuscripcion.idTipoSuscripcion, tiposuscripcion);
+  modificar(tipoSuscripcion: TipoSuscripcion) {
+    return this.http.put(this.url, tipoSuscripcion);
   }
-  listarId(id: number) {
-    return this.http.get<TipoSuscripcion>(`${this.url}/${id}`);
+  listarId(idTipoSuscripcion: number) {
+    return this.http.get<TipoSuscripcion>(`${this.url}/${idTipoSuscripcion}`);
   }
-  eliminar(id: number) {
-    return this.http.delete(this.url + "/" + id);
+  eliminar(idTipoSuscripcion: number) {
+    return this.http.delete(this.url + "/" + idTipoSuscripcion);
   }
   getConfirmaEliminacion() {
     return this.confirmaEliminacion.asObservable();
@@ -43,6 +44,9 @@ export class TipoSuscripcionService {
       });
     }
     return EMPTY;
+  }
+  buscarDescuento() {
+    return this.http.get<TipoSuscripcion[]>(`${this.url}/buscarDescuento`);
   }
 
 }

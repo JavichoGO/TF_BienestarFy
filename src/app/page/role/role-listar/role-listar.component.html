@@ -1,7 +1,7 @@
 <div class ="container">
   <h1 >ROL</h1>
-  <app-role-buscar></app-role-buscar>
 
+  <app-role-buscar></app-role-buscar>
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
   <!--- Note that these columns can be defined in any order.
@@ -13,13 +13,13 @@
     <td mat-cell *matCellDef="let element"> {{element.idRole}} </td>
   </ng-container>
 
-  <!-- Name Column -->
+ <!-- Name Column -->
   <ng-container matColumnDef="nombre">
     <th mat-header-cell *matHeaderCellDef> Nombre </th>
     <td mat-cell *matCellDef="let element"> {{element.nombreRole}} </td>
   </ng-container>
 
-  <!-- Weight Column -->
+   <!-- Weight Column -->
   <ng-container matColumnDef="descripcion">
     <th mat-header-cell *matHeaderCellDef> Descripcion </th>
     <td mat-cell *matCellDef="let element"> {{element.descripcionRole}} </td>
@@ -27,7 +27,7 @@
 
   <ng-container matColumnDef="acciones">
     <th mat-header-cell *matHeaderCellDef> Acciones </th>
-    <td mat-cell *matCellDef="let element">
+    <td mat-cell *matCellDef="let element"> 
       <button mat-raised-button color="success"
         [routerLink]="['edicion', element?.idRole]">Actualizar</button>
       <button mat-raised-button color="success2" (click)="confirmar(element.idRole)">Eliminar</button>

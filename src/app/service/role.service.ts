@@ -1,29 +1,47 @@
 import { Role } from './../model/role';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Subject, EMPTY } from 'rxjs';
+import { Subject,EMPTY } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RoleService {
+   url: string = 'http://localhost:8086/role'
 
-  url: string = "http://localhost:8086/role"
   private listaCambio = new Subject<Role[]>()
   private confirmaEliminacion = new Subject<Boolean>()
-  constructor(private http: HttpClient) { }
-  listar() {
+  constructor(private http:HttpClient) { }
+  listar(){
     return this.http.get<Role[]>(this.url);
   }
-  insertar(role: Role) {
+  insertar(role: Role){
     return this.http.post(this.url, role);
 
   }
+  setLista(listaNueva: Role[]) {
+    this.listaCambio.next(listaNueva);
+  }
+  
+  getLista() {
+    return this.listaCambio.asObservable();
+  }
+
   modificar(role: Role) {
     return this.http.put(this.url, role);
   }
-  eliminar(id: number) {
-    return this.http.delete(this.url + "/" + id);
+  listarId(idRole: number) {
+    return this.http.get<Role>(`${this.url}/${idRole}`);
+  }
+  eliminar(idRole: number) {
+    return this.http.delete(this.url + "/" + idRole);
+  }
+  getConfirmaEliminacion() {
+    return this.confirmaEliminacion.asObservable();
+  }
+  setConfirmaEliminacion(estado: Boolean) {
+    this.confirmaEliminacion.next(estado);
   }
   buscar(texto: string) {
     if (texto.length != 0) {
@@ -32,26 +50,6 @@ export class RoleService {
     }
     return EMPTY;
   }
-
-  listarId(id: number) {
-    return this.http.get<Role>(`${this.url}/${id}`);
-  }
-
-  getLista() {
-    return this.listaCambio.asObservable();
-  }
-
-  setLista(listaNueva: Role[]) {
-    this.listaCambio.next(listaNueva);
-  }
-
-  getConfirmaEliminacion() {
-    return this.confirmaEliminacion.asObservable();
-  }
-  setConfirmaEliminacion(estado: Boolean) {
-    this.confirmaEliminacion.next(estado);
-  }
-
 
 
 }

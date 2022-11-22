@@ -4,3 +4,4 @@ export class Categoria{
     nombreCategoria:string="";
     descripcionCategoria:string="";
   }
+  

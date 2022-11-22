@@ -11,12 +11,12 @@ export class TipoHorarioCreaeditaComponent implements OnInit {
   tipohorario: TipoHorario = new TipoHorario();
   mensaje: string = "";
   edicion: boolean = false;
-  id: number = 0;
+  idTipoHorario: number = 0;
   constructor(private tipohorarioService: TipoHorarioService, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit(): void {
     this.route.params.subscribe((data: Params) => {
-      this.id = data['id'];
+      this.idTipoHorario = data['id'];
       this.edicion = data['id'] != null;
       this.init();
     });
@@ -44,7 +44,7 @@ export class TipoHorarioCreaeditaComponent implements OnInit {
 
   init() {
     if (this.edicion) {
-      this.tipohorarioService.listarId(this.id).subscribe(data => {
+      this.tipohorarioService.listarId(this.idTipoHorario).subscribe(data => {
         this.tipohorario = data;
       })
     }

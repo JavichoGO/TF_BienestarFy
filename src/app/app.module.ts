@@ -37,11 +37,6 @@ import { TipoSuscripcionCreaeditaComponent } from './page/tipo-suscripcion/tipo-
 import { CategoriaBuscarComponent } from './page/categoria/categoria-buscar/categoria-buscar.component';
 import { CategoriaDialogoComponent } from './page/categoria/categoria-listar/categoria-dialogo/categoria-dialogo.component';
 import { MatDialogModule } from '@angular/material/dialog';
-import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { DateAdapter, MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
-import { MatSelectModule } from '@angular/material/select';
 import { TipoActividadBuscarComponent } from './page/tipo-actividad/tipo-actividad-buscar/tipo-actividad-buscar.component';
 import { TipoActividadDialogoComponent } from './page/tipo-actividad/tipo-actividad-listar/tipo-actividad-dialogo/tipo-actividad-dialogo.component';
 import { TipoSuscripcionDialogoComponent } from './page/tipo-suscripcion/tipo-suscripcion-listar/tipo-suscripcion-dialogo/tipo-suscripcion-dialogo.component';
@@ -51,16 +46,30 @@ import { TipoHorarioDialogoComponent } from './page/tipo-horario/tipo-horario-li
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { RoleBuscarComponent } from './page/role/role-buscar/role-buscar.component';
 import { RoleDialogoComponent } from './page/role/role-listar/role-dialogo/role-dialogo.component';
-import { UsuarioBuscarComponent } from './page/usuario/usuario-buscar/usuario-buscar.component';
-import { UsuarioCreaeditaComponent } from './page/usuario/usuario-creaedita/usuario-creaedita.component';
+import { DetalleReservaComponent } from './page/detalle-reserva/detalle-reserva.component';
+import { DetalleReservaListarComponent } from './page/detalle-reserva/detalle-reserva-listar/detalle-reserva-listar.component';
 import { UsuarioDialogoComponent } from './page/usuario/usuario-listar/usuario-dialogo/usuario-dialogo.component';
-import { ActividadDialogoComponent } from './page/actividad/actividad-listar/actividad-dialogo/actividad-dialogo.component';
-import { ActividadCreaeditaComponent } from './page/actividad/actividad-creaedita/actividad-creaedita.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import {MatSelectModule} from '@angular/material/select';
+import {UsuarioCreaeditaComponent } from './page/usuario/usuario-creaedita/usuario-creaedita.component';
+import { HorarioCreaeditaComponent } from './page/horario/horario-creaedita/horario-creaedita.component';
+import { HorarioBuscarComponent } from './page/horario/horario-buscar/horario-buscar.component';
+import { HorarioDialogoComponent } from './page/horario/horario-listar/horario-dialogo/horario-dialogo.component';
+import { DetalleReservaBuscarComponent } from './page/detalle-reserva/detalle-reserva-buscar/detalle-reserva-buscar.component';
+import { DetalleReservaCreaeditaComponent } from './page/detalle-reserva/detalle-reserva-creaedita/detalle-reserva-creaedita.component';
+import { DetalleReservaDialogoComponent } from './page/detalle-reserva/detalle-reserva-listar/detalle-reserva-dialogo/detalle-reserva-dialogo.component';
 import { ActividadBuscarComponent } from './page/actividad/actividad-buscar/actividad-buscar.component';
+import { ActividadCreaeditaComponent } from './page/actividad/actividad-creaedita/actividad-creaedita.component';
+import { ActividadDialogoComponent } from './page/actividad/actividad-listar/actividad-dialogo/actividad-dialogo.component';
+import { UsuarioBuscarComponent } from './page/usuario/usuario-buscar/usuario-buscar.component';
 import { SuscripcionBuscarComponent } from './page/suscripcion/suscripcion-buscar/suscripcion-buscar.component';
 import { SuscripcionCreaeditaComponent } from './page/suscripcion/suscripcion-creaedita/suscripcion-creaedita.component';
 import { SuscripcionDialogoComponent } from './page/suscripcion/suscripcion-listar/suscripcion-dialogo/suscripcion-dialogo.component';
-
+import { ReservaBuscarComponent } from './page/reserva/reserva-buscar/reserva-buscar.component';
+import { ReservaCreaeditaComponent } from './page/reserva/reserva-creaedita/reserva-creaedita.component';
+import { TipoSuscripcionDescuentoComponent } from './page/tipo-suscripcion/tipo-suscripcion-descuento/tipo-suscripcion-descuento.component';
+import { ReservaUsuarioComponent } from './page/reserva/reserva-usuario/reserva-usuario.component';
 
 
 @NgModule({
@@ -101,35 +110,44 @@ import { SuscripcionDialogoComponent } from './page/suscripcion/suscripcion-list
     TipoHorarioDialogoComponent,
     RoleBuscarComponent,
     RoleDialogoComponent,
+    DetalleReservaComponent,
+    DetalleReservaListarComponent,
+    UsuarioDialogoComponent,
     UsuarioBuscarComponent,
     UsuarioCreaeditaComponent,
-    UsuarioDialogoComponent,
-    ActividadDialogoComponent,
-    ActividadCreaeditaComponent,
+    HorarioCreaeditaComponent,
+    HorarioBuscarComponent,
+    HorarioDialogoComponent,
+    DetalleReservaBuscarComponent,
+    DetalleReservaCreaeditaComponent,
+    DetalleReservaDialogoComponent,
     ActividadBuscarComponent,
+    ActividadCreaeditaComponent,
+    ActividadDialogoComponent,
     SuscripcionBuscarComponent,
     SuscripcionCreaeditaComponent,
-    SuscripcionDialogoComponent
+    SuscripcionDialogoComponent,
+    ReservaBuscarComponent,
+    ReservaCreaeditaComponent,
+    TipoSuscripcionDescuentoComponent,
+    ReservaUsuarioComponent,
   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule,
     BrowserAnimationsModule,
     MatTableModule,
     MatInputModule,
+    FormsModule,
     MatButtonModule,
     MatIconModule,
     MatDialogModule,
-    MatToolbarModule,    
-    MatSelectModule,
-
+    MatToolbarModule,
     MatDatepickerModule,
-    MatNativeDateModule,
     MatSnackBarModule,
-    MatFormFieldModule
+    MatSelectModule
 
   
   ],

@@ -1,3 +1,4 @@
+import { environment } from './../../environments/environment';
 import { Subject, EMPTY} from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { Categoria } from './../model/categoria';
@@ -7,8 +8,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class CategoriaService {
-  url: string = "http://localhost:8086/categoria"
-
+   url: string = 'http://localhost:8086/categoria'
+    /*https://bienestarfybackend.herokuapp.com/*/
   private listaCambio = new Subject<Categoria[]>()
   private confirmaEliminacion = new Subject<Boolean>()
   constructor(private http: HttpClient) { }
@@ -28,7 +29,7 @@ export class CategoriaService {
   }
 
   modificar(categoria: Categoria) {
-    return this.http.put(this.url + "/" + categoria.idCategoria, categoria);
+    return this.http.put(this.url, categoria);
   }
   listarId(id: number) {
     return this.http.get<Categoria>(`${this.url}/${id}`);

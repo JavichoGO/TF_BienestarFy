@@ -10,12 +10,12 @@ table {
 
 h1 {
   padding-top: 13%;
-  padding-bottom: 3%;
+  padding-bottom: 5%;
   text-align: center;
   font-size: 50px;
   font-family: 'Poppins';
   font-weight: 600;
-  color: rgb(42, 41, 41);
+  color: rgb(49, 49, 49);
 }
 
 th {
@@ -28,11 +28,20 @@ th {
 td{
   font-size: 15px;
 }
+button {
+  object-position: center;
+  font-size: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
+  text-align: center;
+}
+
 .mat-success2 {
   color: #fff;
   background-color: #f9516b;
 }
 .mat-success {
   color: #fff;
-  background-color: #5cd2fa;
+  background-color: #5cd2fa
+  ;
 }

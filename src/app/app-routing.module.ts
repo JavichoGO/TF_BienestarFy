@@ -1,4 +1,8 @@
-import { UsuarioCreaeditaComponent } from './page/usuario/usuario-creaedita/usuario-creaedita.component';
+import { ReservaUsuarioComponent } from './page/reserva/reserva-usuario/reserva-usuario.component';
+import { TipoSuscripcionDescuentoComponent } from './page/tipo-suscripcion/tipo-suscripcion-descuento/tipo-suscripcion-descuento.component';
+import { ReservaCreaeditaComponent } from './page/reserva/reserva-creaedita/reserva-creaedita.component';
+import { DetalleReservaCreaeditaComponent } from './page/detalle-reserva/detalle-reserva-creaedita/detalle-reserva-creaedita.component';
+import { DetalleReservaComponent } from './page/detalle-reserva/detalle-reserva.component';
 import { CategoriaCreaEditaComponent } from './page/categoria/categoria-creaedita/categoria-creaedita.component';
 import { TipoSuscripcionCreaeditaComponent } from './page/tipo-suscripcion/tipo-suscripcion-creaedita/tipo-suscripcion-creaedita.component';
 import { RoleCreaeditaComponent } from './page/role/role-creaedita/role-creaedita.component';
@@ -16,7 +20,9 @@ import { TipoHorarioComponent } from './page/tipo-horario/tipo-horario.component
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HorarioComponent } from './page/horario/horario.component';
+import { UsuarioCreaeditaComponent } from './page/usuario/usuario-creaedita/usuario-creaedita.component';
 import { ActividadCreaeditaComponent } from './page/actividad/actividad-creaedita/actividad-creaedita.component';
+import { HorarioCreaeditaComponent } from './page/horario/horario-creaedita/horario-creaedita.component';
 import { SuscripcionCreaeditaComponent } from './page/suscripcion/suscripcion-creaedita/suscripcion-creaedita.component';
 
 
@@ -30,7 +36,9 @@ const routes: Routes = [
     ]
   },{
     path:'horario',component:HorarioComponent,children:[
-
+      { path: 'nuevo', component: HorarioCreaeditaComponent },
+      { path: 'edicion/:id', component: HorarioCreaeditaComponent }
+  
     ]
   },
   {
@@ -48,13 +56,15 @@ const routes: Routes = [
   {
     path:'tiposuscripcion',component:TipoSuscripcionComponent,children:[
       { path: 'nuevo', component: TipoSuscripcionCreaeditaComponent },
-      { path: 'edicion/:id', component: TipoSuscripcionCreaeditaComponent }
+      { path: 'edicion/:id', component: TipoSuscripcionCreaeditaComponent },
+      { path: 'descuento', component: TipoSuscripcionDescuentoComponent }
+    
     ]
   },
   {
     path:'suscripcion',component:SuscripcionComponent,children:[
-      { path: 'nuevo', component: SuscripcionCreaeditaComponent },
-      { path: 'edicion/:id', component: SuscripcionCreaeditaComponent }
+      {path: 'nuevo', component:SuscripcionCreaeditaComponent},
+      {path: 'edicion/:id', component:SuscripcionCreaeditaComponent},
     ]
   },
   {
@@ -72,13 +82,21 @@ const routes: Routes = [
   },
   {
     path:'reserva',component:ReservaComponent,children:[
-
+      { path: 'nuevo', component: ReservaCreaeditaComponent },
+      { path: 'edicion/:id', component: ReservaCreaeditaComponent } 
     ]
   },
   {
     path:'categoria',component:CategoriaComponent,children:[
       { path: 'nuevo', component: CategoriaCreaEditaComponent },
       { path: 'edicion/:id', component: CategoriaCreaEditaComponent }
+    ]
+  },
+  {
+    path:'detallereserva',component:DetalleReservaComponent,children:[
+      { path: 'nuevo', component: DetalleReservaCreaeditaComponent },
+      { path: 'edicion/:id', component: DetalleReservaCreaeditaComponent },
+      {path: 'usuario', component: ReservaUsuarioComponent }
     ]
   },
 ];

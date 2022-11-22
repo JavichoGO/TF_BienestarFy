@@ -1,5 +1,7 @@
 <div class="container">
-  <h1>TIPO SUSCRIPCIÓN</h1>
+  <h1 >TIPO DE SUSCRIPCION</h1>
+
+
   <app-tipo-suscripcion-buscar></app-tipo-suscripcion-buscar>
 
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
@@ -15,7 +17,8 @@
 
     <ng-container matColumnDef="descripcion">
       <th mat-header-cell *matHeaderCellDef>Descripcion</th>
-      <td mat-cell *matCellDef="let element">{{ element.descripcionTipoSucripcion }}</td>
+      <td mat-cell *matCellDef="let element">{{ element.descripcionTipoSuscripcion }}</td>
+
     </ng-container>
 
     <ng-container matColumnDef="descuento">
@@ -25,7 +28,7 @@
 
     <ng-container matColumnDef="acciones">
       <th mat-header-cell *matHeaderCellDef> Acciones </th>
-      <td mat-cell *matCellDef="let element">
+      <td mat-cell *matCellDef="let element"> 
         <button mat-raised-button color="success"
           [routerLink]="['edicion', element?.idTipoSuscripcion]">Actualizar</button>
         <button mat-raised-button color="success2" (click)="confirmar(element.idTipoSuscripcion)">Eliminar</button>
@@ -42,5 +45,8 @@
       routerLink="/tiposuscripcion/nuevo">
       <mat-icon>plus_one</mat-icon>
     </button>
+    
+    <button mat-raised-button color="success2"
+          [routerLink]="['descuento']">TABLA DE MAYOR DESCUENTOS</button>
   </div>
 </div>

@@ -1,30 +1,30 @@
 <div class="container">
   <h1 >AÑADIR ROL</h1>
-
+  
       <mat-form-field class="example-full-width">
         <mat-label>Id</mat-label>
         <input matInput placeholder="id" [(ngModel)]="role.idRole">
       </mat-form-field>
-
+    
       <br>
-
+    
       <mat-form-field class="example-full-width">
         <mat-label>Nombre</mat-label>
         <input matInput required placeholder="nombre" [(ngModel)]="role.nombreRole">
-
+    
       </mat-form-field>
-
+    
       <br>
       <mat-form-field class="example-full-width">
         <mat-label>Descripcion</mat-label>
         <input matInput required placeholder="descripcion" [(ngModel)]="role.descripcionRole">
       </mat-form-field>
-
-
-
+  
+      
+    
       <br>
       <button mat-raised-button color="success" (click)="aceptar()">Aceptar</button>
       <button mat-raised-button color="success2" routerLink="/role">Cancelar</button>
       <p>{{mensaje}}</p>
-
+    
     </div>

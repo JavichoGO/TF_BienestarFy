@@ -4,26 +4,26 @@
       <mat-label>Id</mat-label>
       <input matInput placeholder="Id" [(ngModel)]="categoria.idCategoria">
     </mat-form-field>
-
+  
     <br>
-
+  
     <mat-form-field class="example-full-width">
       <mat-label>Nombre</mat-label>
       <input matInput required placeholder="Nombre" [(ngModel)]="categoria.nombreCategoria">
-
+  
     </mat-form-field>
-
+  
     <br>
     <mat-form-field class="example-full-width">
       <mat-label>Descripcion</mat-label>
-      <input type="Descripcion" matInput required placeholder="Descripcion" [(ngModel)]="categoria.descripcionCategoria">
+      <input matInput required placeholder="Descripcion" [(ngModel)]="categoria.descripcionCategoria">
     </mat-form-field>
 
-
-
+    
+  
     <br>
     <button mat-raised-button color="success" (click)="aceptar()">Aceptar</button>
     <button mat-raised-button color="success2" routerLink="/categoria">Cancelar</button>
     <p>{{mensaje}}</p>
-
+  
   </div>

@@ -29,14 +29,14 @@ export class TipoSuscripcionListarComponent implements OnInit {
 
 
   }
-  confirmar(id: number) {
-    this.idMayor = id;
+  confirmar(idTipoSuscripcion: number) {
+    this.idMayor = idTipoSuscripcion;
     this.dialog.open(TipoSuscripcionDialogoComponent);
   }
 
 
-  eliminar(id: number) {
-    this.tss.eliminar(id).subscribe(() => {
+  eliminar(idTipoSuscripcion: number) {
+    this.tss.eliminar(idTipoSuscripcion).subscribe(() => {
       this.tss.listar().subscribe(data => {
         this.tss.setLista(data);
       });

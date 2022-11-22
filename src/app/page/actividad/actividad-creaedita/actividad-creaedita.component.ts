@@ -49,7 +49,7 @@ export class ActividadCreaeditaComponent implements OnInit {
 
         let a = new TipoActividad();
         a.idTipoActividad = this.idTipoActividadSeleccionado;
-        this.actividad.tipoactividad = a;
+        this.actividad.tipoActividad = a;
 
         if (this.edicion) {
           this.aS.modificar(this.actividad).subscribe(() => {
@@ -83,7 +83,7 @@ export class ActividadCreaeditaComponent implements OnInit {
         this.aS.listarId(this.id).subscribe(data => {
           this.actividad = data
           console.log(data);
-          this.idTipoActividadSeleccionado = data.tipoactividad.idTipoActividad;
+          this.idTipoActividadSeleccionado = data.tipoActividad.idTipoActividad;
           this.idUsuarioSeleccionado = data.usuario.idUsuario;
         });
 
