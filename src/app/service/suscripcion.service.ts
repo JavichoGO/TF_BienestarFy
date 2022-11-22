@@ -52,5 +52,8 @@ export class SuscripcionService {
   setConfirmaEliminacion(estado: Boolean) {
     this.confirmaEliminacion.next(estado);
   }
+  obtenerPromedio() {
+    return this.http.get<Suscripcion[]>(`${this.url}/PromedioPrecios`);
+  }
 }
 

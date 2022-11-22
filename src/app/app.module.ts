@@ -82,6 +82,8 @@ import { TipoActividadContadorComponent } from './page/tipo-actividad/tipo-activ
 import { ActividadDuracionComponent } from './page/actividad/actividad-duracion/actividad-duracion.component';
 import { HorarioCantidadComponent } from './page/horario/horario-cantidad/horario-cantidad.component';
 import { CategoriaUsuarioComponent } from './page/categoria/categoria-usuario/categoria-usuario.component';
+import { SuscripcionPromedioComponent } from './page/suscripcion/suscripcion-promedio/suscripcion-promedio.component';
+import { UsuarioEdadComponent } from './page/usuario/usuario-edad/usuario-edad.component';
 
 
 
@@ -150,7 +152,9 @@ import { CategoriaUsuarioComponent } from './page/categoria/categoria-usuario/ca
     TipoActividadContadorComponent,
     ActividadDuracionComponent,
     HorarioCantidadComponent,
-    CategoriaUsuarioComponent
+    CategoriaUsuarioComponent,
+    SuscripcionPromedioComponent,
+    UsuarioEdadComponent
   
   ],
   imports: [

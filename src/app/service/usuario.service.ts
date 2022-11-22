@@ -58,5 +58,8 @@ export class UsuarioService {
   buscarcantidadusuarios() {
     return this.http.get<RespuestaSuscripcion[]>(`${this.url}/cantidadusuario`);
   }
+  obtenerEdadMenor() {
+    return this.http.get<Usuario[]>(`${this.url}/MenorEdadUsuario`);
+  }
 
 }
